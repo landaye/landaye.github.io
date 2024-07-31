@@ -1,5 +1,4 @@
-
-.shop-choose{
+.shop-choose {
   width: 100%;
   height: 40vw;
   position: fixed;
@@ -17,61 +16,101 @@
 
 
 .shop-choose .text {
-  margin-left:66%;
-color: var(--footer-link-grey);
+  margin-left: 66%;
+  color: var(--footer-link-grey);
 }
 
 
-.img-box{
-  width: 100%;
+.img-box {
   height: auto;
-  margin-top: 25%;
-  margin-left: 1%;
+  margin-top: 17%;
+  padding-left: 1%;
   position: relative;
   z-index: 55;
 }
 
+@media screen and (max-width: 1237px) {
+  .img-box {
+    margin-top: 25%;
+  }
+}
 
-.img-style-1{
+@media screen and (max-width: 850px) {
+  .img-box {
+    margin-top: 35%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .img-box {
+    margin-top: 65%;
+  }
+  .shop-choose .text {
+    margin-left: 56%;
+    font-size: 12px;
+  }
+}
 
+
+.img-style-1 {
   width: 34vw;
   height: 35vw;
 }
-.img-style-2{
- 
+
+.img-style-2 {
   margin-top: -10%;
   margin-left: 25%;
   width: 19vw;
-  height: 20vw;  
+  height: 20vw;
 }
-.img-style-3{
+
+.img-style-3 {
   margin-top: -40%;
   margin-left: 60%;
   width: 14vw;
   height: 15vw;
-  
 }
-.img-style-4{
+
+.img-style-4 {
   margin-top: 5%;
   margin-left: 73%;
   width: 19vw;
-  height: 20vw; 
+  height: 20vw;
 }
-.img-style-5{
+
+.img-style-5 {
   margin-top: 10%;
   margin-left: 60%;
   width: 14vw;
-  height: 15vw;  
-}
-.img-style-6{
-  margin-left: 25%;
-  width: 24vw;
-  height: 25vw;  
+  height: 15vw;
 }
 
-.img-box img{
-  width:100%;
-  height:100%;
+.img-style-6 {
+  margin-left: 25%;
+  width: 24vw;
+  height: 25vw;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  cursor:pointer;
+}
+
+.img-box img {
+  object-fit: cover;
+  filter: brightness(1);
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.25, 1),
+    filter 400ms cubic-bezier(0.4, 0, 0.25, 1);
+}
+
+.img-style-1:hover img,
+.img-style-2:hover img,
+.img-style-3:hover img,
+.img-style-4:hover img,
+.img-style-5:hover img,
+.img-style-6:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.85);
 }
 
 
@@ -101,6 +140,7 @@ color: var(--footer-link-grey);
     transform: rotateX(90deg);
     opacity: 0;
   }
+
   100% {
     transform: rotateX(0deg);
     opacity: 1;
@@ -110,14 +150,7 @@ color: var(--footer-link-grey);
 
 
 
-
-
-
-
-
-
-
-img{
+img {
   opacity: 0;
 }
 
@@ -128,13 +161,13 @@ img{
 /* 定义渐变显示的动画 */
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      /* 初始透明度为0 */
+    opacity: 0;
+    /* 初始透明度为0 */
   }
 
   to {
-      opacity: 1;
-      /* 最终透明度为1 */
+    opacity: 1;
+    /* 最终透明度为1 */
   }
 }
 
@@ -142,7 +175,7 @@ img{
 
 
 /* 弹窗 */
-.btn-alert{
+.btn-alert {
   display: block;
   width: 400px;
   height: auto;
@@ -154,59 +187,87 @@ img{
   cursor: pointer;
   letter-spacing: 5px;
 }
+
 /* 遮罩层 */
-.alert{
+.alert {
   display: none;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: rgba(0,0,0,.4);
+  background: rgba(0, 0, 0, .4);
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   z-index: 8888;
 }
-.alert-body{
+
+.alert-body {
   display: flex;
   width: 720px;
   height: 400px;
-  background-color: #f4f0ea;
+  background-color: var(--body-bg);
   font-size: 30px;
   color: var(--footer-link-grey);
-  text-align: center;       
-      
+  text-align: center;
+
 }
-.alert-title{
+
+.alert-title {
   margin: 0;
   padding: 0;
 }
-.alert-title img{
+
+.alert-title img {
   width: 360px;
-  height:400px;
+  height: 400px;
 }
-.close{
+
+.close {
   width: 40px;
   height: 40px;
   line-height: 40px;
   cursor: pointer;
   transition: transform 0.2s ease-in;
 }
-.close:hover{
-      transform: scale(1.2);
+
+.close:hover {
+  transform: scale(1.2);
 }
 
-.alert-content{
+.alert-content {
   width: 320px;
   height: 360px;
-  border: 20px solid #f4f0ea;
+  border: 20px solid var(--body-bg);
   text-align: left;
 }
 
-.alert-content p{
+.alert-content p {
   font-size: 15px;
 }
-.alert-content h6{
+
+.alert-content h6 {
   margin: 0;
   padding: 0;
+  color: var(--black-2);
+  
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .alert-body {
+    display: flex;
+    width: auto;
+    height: 400px;
+    font-size: 30px;
+  }
+  .alert-title img {
+    display: none;
+  }
+}
+.button{
+  border: none;
+  background-color: var(--body-bg);
+  cursor:pointer;
 }

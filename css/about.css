@@ -1,5 +1,212 @@
-/* 自定义关于页面样式 */
-h1 {
-  background-color: rosybrown;
+
+.shop-choose{
+  width: 100%;
+  height: 40vw;
+  position: fixed;
+  z-index: 1;
 }
+
+.shop-choose .shop-choose-1 {
+  margin-left: 1%;
+  width: 100%;
+  font-size: 60px;
+  height: auto;
+  z-index: 1;
+  color: var(--footer-link-grey);
+}
+
+
+.shop-choose .text {
+  margin-left:66%;
+color: var(--footer-link-grey);
+}
+
+
+.img-box{
+  width: 100%;
+  height: auto;
+  margin-top: 25%;
+  margin-left: 1%;
+  position: relative;
+  z-index: 55;
+}
+
+
+.img-style-1{
+
+  width: 34vw;
+  height: 35vw;
+}
+.img-style-2{
+ 
+  margin-top: -10%;
+  margin-left: 25%;
+  width: 19vw;
+  height: 20vw;  
+}
+.img-style-3{
+  margin-top: -40%;
+  margin-left: 60%;
+  width: 14vw;
+  height: 15vw;
   
+}
+.img-style-4{
+  margin-top: 5%;
+  margin-left: 73%;
+  width: 19vw;
+  height: 20vw; 
+}
+.img-style-5{
+  margin-top: 10%;
+  margin-left: 60%;
+  width: 14vw;
+  height: 15vw;  
+}
+.img-style-6{
+  margin-left: 25%;
+  width: 24vw;
+  height: 25vw;  
+}
+
+.img-box img{
+  width:100%;
+  height:100%;
+}
+
+
+
+
+
+.bottom-title {
+  width: 100%;
+  height: auto;
+  left: 50%;
+  font-size: 55px;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+
+.tx {
+  transform-style: preserve-3d;
+  animation: flip-in2 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+
+@keyframes flip-in2 {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+img{
+  opacity: 0;
+}
+
+.tx2 {
+  animation: fadeIn 2s ease forwards;
+}
+
+/* 定义渐变显示的动画 */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      /* 初始透明度为0 */
+  }
+
+  to {
+      opacity: 1;
+      /* 最终透明度为1 */
+  }
+}
+
+
+
+
+/* 弹窗 */
+.btn-alert{
+  display: block;
+  width: 400px;
+  height: auto;
+  background-color: #fff;
+  color: var(--footer-link-grey);
+  font-size: 40px;
+  margin: 20px auto 0;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 5px;
+}
+/* 遮罩层 */
+.alert{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.4);
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 8888;
+}
+.alert-body{
+  display: flex;
+  width: 720px;
+  height: 400px;
+  background-color: #f4f0ea;
+  font-size: 30px;
+  color: var(--footer-link-grey);
+  text-align: center;       
+      
+}
+.alert-title{
+  margin: 0;
+  padding: 0;
+}
+.alert-title img{
+  width: 360px;
+  height:400px;
+}
+.close{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+}
+.close:hover{
+      transform: scale(1.2);
+}
+
+.alert-content{
+  width: 320px;
+  height: 360px;
+  border: 20px solid #f4f0ea;
+  text-align: left;
+}
+
+.alert-content p{
+  font-size: 15px;
+}
+.alert-content h6{
+  margin: 0;
+  padding: 0;
+}

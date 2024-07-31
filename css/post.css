@@ -42,6 +42,7 @@ body {
 .content h4,
 .content h5,
 .content h6,
+.content .iframe,
 .meta .categories,
 .meta .date,
 .content figure,
@@ -59,7 +60,8 @@ hr,
 .content ol,
 .content > mjx-container,
 .content > .katex,
-.about {
+.about
+ {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;

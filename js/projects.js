@@ -42,7 +42,7 @@ window.onload = function () {
     if (n < 0.2 && top3 > 0) {
       n = 0.2;
       video_about.style.transform = `scaleX(${n}) scaleY(${n})`;
-      console.log(top3);
+      //console.log(top3);
     } else if (0.2 <= n <= 1 && top3 > 0) {
       video_about.style.transform = `scaleX(${n}) scaleY(${n})`;
     } else {

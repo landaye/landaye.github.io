@@ -12,11 +12,12 @@
     padding: 0 0 0 10%;
     display: flex;
     justify-content: left;
-    height: 38vw;
+
 }
 
 .titles-imgs img {
     width: 30%;
+    height: auto;
     object-fit: cover;
     max-width: 800px;
 }
@@ -240,32 +241,42 @@ p {
     filter: brightness(0.85);
 }
 
+@media screen and (max-width: 1200px) {
+
+    .titles-imgs {
+        transform: translateX(40px);
+    }
+
+    .text3 {
+        opacity: 0;
+    }
+
+    .titles-imgs img {
+        width: 50%;
+    }
+
+}
 
 @media screen and (max-width: 800px) {
     .container {
         display: block;
     }
 
-    .titles-img1 {
-       transform:translateY(10px);
-    }
-
-    .container h1{
+    .container h1 {
         font-size: 6vw;
     }
-    .container h2{
+
+    .container h2 {
         font-size: 4vw;
     }
-    .container p{
+
+    .container p {
         font-size: 3vw;
     }
 }
+
 @media screen and (max-width: 600px) {
     .container {
         display: block;
-    }
-
-    .titles-img1 {
-       transform:translateY(20px);
     }
 }

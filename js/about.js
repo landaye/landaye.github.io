@@ -68,16 +68,16 @@ window.onload = function () {
   }
 
   // 遍历所有图片元素并为它们添加点击事件监听器
-  const imgGroups = [
-    [
-      "/about-img/1.jpg",
-      "/about-img/2.jpg",
-      "/about-img/3.jpg",
-      "/about-img/4.jpg",
-      "/about-img/5.jpg",
-      "/about-img/7.jpg",
-    ],
-  ];
+  // const imgGroups = [
+  //   [
+  //     "/about-img/1.jpg",
+  //     "/about-img/2.jpg",
+  //     "/about-img/3.jpg",
+  //     "/about-img/4.jpg",
+  //     "/about-img/5.jpg",
+  //     "/about-img/7.jpg",
+  //   ],
+  // ];
   let img_array = [
     [
       "长沙//毛爷爷",

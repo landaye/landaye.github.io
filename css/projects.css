@@ -241,7 +241,7 @@ p {
     filter: brightness(0.85);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200rem) {
 
     .titles-imgs {
         transform: translateX(40px);

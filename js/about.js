@@ -93,7 +93,6 @@ window.onload = function () {
       src = img.getAttribute("src");
       x = img.getAttribute("data-x");
       y = img.getAttribute("data-y");
-      // console.log("Clicked image source:", src);
       alert.style.display = "flex";
       alert_title.innerHTML = `<img style="opacity: 1;" src="${src}" alt="">`;
       img_description.innerHTML = `<h6>${

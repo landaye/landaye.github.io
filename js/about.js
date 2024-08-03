@@ -56,6 +56,7 @@ window.onload = function () {
 
   const alert = document.querySelector(".alert");
   const alert_title = document.querySelector(".alert-title");
+  const img_description = document.querySelector(".img-description");
   let src;
 
   function disableScroll() {
@@ -67,13 +68,37 @@ window.onload = function () {
   }
 
   // 遍历所有图片元素并为它们添加点击事件监听器
+  const imgGroups = [
+    [
+      "/about-img/1.jpg",
+      "/about-img/2.jpg",
+      "/about-img/3.jpg",
+      "/about-img/4.jpg",
+      "/about-img/5.jpg",
+      "/about-img/7.jpg",
+    ],
+  ];
+  let img_array = [
+    [
+      "长沙//毛爷爷",
+      "重庆//来自老师的礼物",
+      "重庆//和小伙伴完成了一次雨天爬山",
+      "重庆//保持心灵的宁静",
+      "湖北//神龙架一日游",
+      "巫山//喜欢与自然亲近",
+    ],
+  ];
   imgBoxes.forEach((img) => {
     img.addEventListener("click", function () {
       src = img.getAttribute("src");
-      console.log("Clicked image source:", src);
+      x = img.getAttribute("data-x");
+      y = img.getAttribute("data-y");
+      // console.log("Clicked image source:", src);
       alert.style.display = "flex";
       alert_title.innerHTML = `<img style="opacity: 1;" src="${src}" alt="">`;
-
+      img_description.innerHTML = `<h6>${
+        img_array[x][y].split("//")[0]
+      }</h6><p>${img_array[x][y].split("//")[1]}</p>`;
       // 禁用滚轮滚动
       disableScroll();
     });

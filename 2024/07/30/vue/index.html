@@ -202,33 +202,90 @@
 <li><strong>声明式渲染</strong>：Vue 基于标准 HTML 拓展了一套模板语法，使得可以声明式地描述最终输出的 HTML 和 JavaScript 状态之间的关系。</li>
 <li><strong>响应性</strong>：Vue 会自动跟踪 JavaScript 状态并在其发生变化时响应式地更新 DOM</li>
 </ul>
-<h2 id="说说你对-vue-的理解"><a href="#说说你对-vue-的理解" class="headerlink" title=". 说说你对 vue 的理解"></a>. 说说你对 vue 的理解</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 渐进式框架</span><br><span class="line">2. 组件化</span><br><span class="line">3. 响应式系统</span><br><span class="line">4. 虚拟DOM</span><br><span class="line">5. 单文件组件 (SFC)</span><br><span class="line">6. Vue CLI</span><br><span class="line">7. Vue Router 和 Vuex</span><br></pre></td></tr></table></figure>
-
-<h2 id="你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？"><a href="#你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？" class="headerlink" title=". 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？"></a>. 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">单页应用（Single Page Application, SPA）是一种Web应用程序，初次加载所需资源加载到浏览器中。通过JavaScript动态更新页面内容。通过发送网络请求和路由来实现数据获取和页面的导航。</span><br><span class="line">优:</span><br><span class="line">用户体验好、快，内容的改变不需要重新加载整个页面。</span><br><span class="line">具有桌面应用的即时性、网站的可移植性和可访问性。</span><br><span class="line">良好的前后端分离，分工更明确。</span><br><span class="line">缺:</span><br><span class="line">SEO不友好，不利于搜索引擎的抓取。</span><br><span class="line">首次渲染速度相对较慢。</span><br><span class="line">实现SPA:</span><br><span class="line">HTML结构：定义页面的基本结构。</span><br><span class="line">路由功能：实现一个简单的路由系统，根据URL路径动态加载不同的内容。</span><br><span class="line">内容更新：根据当前路由加载相应的内容。</span><br><span class="line">事件监听：监听用户的导航行为（例如点击链接）并触发路由更新。</span><br></pre></td></tr></table></figure>
-
-<h2 id="如何给SPA做SEO？"><a href="#如何给SPA做SEO？" class="headerlink" title=". 如何给SPA做SEO？"></a>. 如何给SPA做SEO？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.SSR服务端渲染</span><br><span class="line">将组件或页面通过服务器生成html，再返回给浏览器，如Vue.js--&gt;Nuxt.js  React--&gt;Next.js</span><br><span class="line">2.静态化</span><br><span class="line">（1）一种是通过程序将动态页面抓取并保存为静态页面，这样的页面的实际存在于服务器的硬盘中</span><br><span class="line">（2）通过WEB服务器的 URL Rewrite的方式，把外部请求的静态地址转化为实际的动态页面地址，而静态页面实际是不存在的。</span><br><span class="line">3.使用Phantomjs针对爬虫处理</span><br></pre></td></tr></table></figure>
-
+<h2 id="说说你对-vue-的理解"><a href="#说说你对-vue-的理解" class="headerlink" title=". 说说你对 vue 的理解"></a>. 说说你对 vue 的理解</h2><ol>
+<li>渐进式框架</li>
+<li>组件化</li>
+<li>响应式系统</li>
+<li>虚拟DOM</li>
+<li>单文件组件 (SFC)</li>
+<li>Vue CLI</li>
+<li>Vue Router 和 Vuex</li>
+</ol>
+<h2 id="你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？"><a href="#你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？" class="headerlink" title=". 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？"></a>. 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？</h2><ol>
+<li>单页应用（Single Page Application, SPA）是一种Web应用程序，初次加载所需资源加载到浏览器中。通过JavaScript动态更新页面内容。通过发送网络请求和路由来实现数据获取和页面的导航。</li>
+<li>优:<br>用户体验好、快，内容的改变不需要重新加载整个页面。<br>具有桌面应用的即时性、网站的可移植性和可访问性。<br>良好的前后端分离，分工更明确。</li>
+<li>缺:<br>SEO不友好，不利于搜索引擎的抓取。<br>首次渲染速度相对较慢。</li>
+<li>实现SPA:<br>HTML结构：定义页面的基本结构。<br>路由功能：实现一个简单的路由系统，根据URL路径动态加载不同的内容。<br>内容更新：根据当前路由加载相应的内容。<br>事件监听：监听用户的导航行为（例如点击链接）并触发路由更新。</li>
+</ol>
+<h2 id="如何给SPA做SEO？"><a href="#如何给SPA做SEO？" class="headerlink" title=". 如何给SPA做SEO？"></a>. 如何给SPA做SEO？</h2><ol>
+<li>SSR服务端渲染<br>将组件或页面通过服务器生成html，再返回给浏览器，如Vue.js–&gt;Nuxt.js  React–&gt;Next.js</li>
+<li>静态化<br>（1）一种是通过程序将动态页面抓取并保存为静态页面，这样的页面的实际存在于服务器的硬盘中<br>（2）通过WEB服务器的 URL Rewrite的方式，把外部请求的静态地址转化为实际的动态页面地址，而静态页面实际是不存在的。</li>
+<li>使用Phantomjs针对爬虫处理</li>
+</ol>
 <h2 id="请描述下你对vue生命周期的理解？"><a href="#请描述下你对vue生命周期的理解？" class="headerlink" title=". 请描述下你对vue生命周期的理解？"></a>. 请描述下你对vue生命周期的理解？</h2><p><img src="/../images/vue%5C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Cover Image Description"></p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">beforeCreate    插件开发中执行一些初始化任务</span><br><span class="line">created	        用于异步数据获取</span><br><span class="line">beforeMount	    未执行渲染、更新，dom未创建</span><br><span class="line">mounted	        用于获取访问数据和dom元素</span><br><span class="line">beforeUpdate    用于获取更新前各种状态</span><br><span class="line">updated	        更新后，所有状态已是最新</span><br><span class="line">beforeDestroy	用于一些定时器或订阅的取消</span><br><span class="line">destroyed	    组件已销毁，作用同上</span><br></pre></td></tr></table></figure>
-
-<h2 id="说说你对keep-alive的理解是什么？缓存后如何获取数据"><a href="#说说你对keep-alive的理解是什么？缓存后如何获取数据" class="headerlink" title=". 说说你对keep-alive的理解是什么？缓存后如何获取数据?"></a>. 说说你对keep-alive的理解是什么？缓存后如何获取数据?</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">设置了 keep-alive 缓存的组件，会多出两个生命周期钩子（activated与deactivated）：</span><br><span class="line">首次：beforeRouteEnter &gt; beforeCreate &gt; created&gt; mounted &gt; activated &gt; ... ... &gt; beforeRouteLeave &gt; deactivated</span><br><span class="line">再次：beforeRouteEnter &gt;activated &gt; ... ... &gt; beforeRouteLeave &gt; deactivated</span><br><span class="line"></span><br><span class="line">获取数据：</span><br><span class="line">beforeRouteEnter</span><br><span class="line">actived</span><br><span class="line">注意：服务器端渲染期间avtived不被调用</span><br></pre></td></tr></table></figure>
-
-<h2 id="在created和mounted这两个生命周期中请求数据有什么区别呢？"><a href="#在created和mounted这两个生命周期中请求数据有什么区别呢？" class="headerlink" title=". 在created和mounted这两个生命周期中请求数据有什么区别呢？"></a>. 在created和mounted这两个生命周期中请求数据有什么区别呢？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">created是在组件实例一旦创建完成的时候立刻调用，页面dom节点并未生成；mounted是在页面dom节点渲染完毕之后就立刻执行的。都能拿到实例对象的属性和方法。放在mounted中的请求有可能导致页面闪动（因为此时页面dom结构已经生成），但如果在页面加载前完成请求，则不会出现此情况。建议对页面内容的改动放在created生命周期当中。</span><br></pre></td></tr></table></figure>
-
-<h2 id="v-if和v-for的优先级是什么？"><a href="#v-if和v-for的优先级是什么？" class="headerlink" title=". v-if和v-for的优先级是什么？"></a>. v-if和v-for的优先级是什么？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">v-for与v-if作用在不同标签时候，是先进行判断，再进行列表的渲染</span><br><span class="line">同一标签进行if判断的时候，v-for是比v-if先进行判断，v-for优先级比v-if高</span><br><span class="line"></span><br><span class="line">永远不要把 v-if 和 v-for 同时用在同一个元素上，带来性能方面的浪费（每次渲染都会先循环再进行条件判断）</span><br></pre></td></tr></table></figure>
-
-<h2 id="Vue组件之间的通信方式都有哪些？"><a href="#Vue组件之间的通信方式都有哪些？" class="headerlink" title=". Vue组件之间的通信方式都有哪些？"></a>. Vue组件之间的通信方式都有哪些？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vue中8种常规的通信方案</span><br><span class="line"></span><br><span class="line">1.通过 props 传递  父--&gt;子</span><br><span class="line">2.通过 $emit 触发自定义事件   子--&gt;父</span><br><span class="line">   子组件通过$emit触发自定义事件，$emit第二个参数为传递的数值</span><br><span class="line">   父组件绑定监听器获取到子组件传递过来的参数</span><br><span class="line">3.使用 ref   子--&gt;父   通过获取dom元素传值</span><br><span class="line">4.EventBus   兄--&gt;兄</span><br><span class="line">5.$parent 或$root   兄--&gt;兄     通过共同祖辈$parent或者$root搭建通信桥连</span><br><span class="line">6.attrs 与 listeners   祖--&gt;孙  </span><br><span class="line">7.Provide 与 Inject    祖--&gt;孙 </span><br><span class="line">   在祖先组件定义provide属性，返回传递的值</span><br><span class="line">   在后代组件通过inject接收组件传递过来的值</span><br><span class="line">8.Vuex  --&gt;复杂关系的组件数据传递</span><br><span class="line">   Vuex作用相当于一个用来存储共享变量的容器</span><br></pre></td></tr></table></figure>
-
-<h2 id="VueX"><a href="#VueX" class="headerlink" title=".  VueX"></a>.  VueX</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">state用来存放共享变量的地方</span><br><span class="line">getter，可以增加一个getter派生状态，(相当于store中的计算属性），用来获得共享变量的值</span><br><span class="line">mutations用来存放修改state的方法。</span><br><span class="line">actions也是用来存放修改state的方法，不过action是在mutations的基础上进行。常用来做一些异步操作</span><br></pre></td></tr></table></figure>
-
-<h2 id="Vue中的-nextTick有什么作用？"><a href="#Vue中的-nextTick有什么作用？" class="headerlink" title=".  Vue中的$nextTick有什么作用？"></a>.  Vue中的$nextTick有什么作用？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$nextTick的主要作用是延迟执行某些代码，直到 Vue 完成更新 DOM。用于在数据变化引发的 DOM 更新完成后执行延迟回调。</span><br></pre></td></tr></table></figure>
-
-<h2 id="你了解vue的diff算法吗？说说看？"><a href="#你了解vue的diff算法吗？说说看？" class="headerlink" title=".  你了解vue的diff算法吗？说说看？"></a>.  你了解vue的diff算法吗？说说看？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">diff 算法是一种通过同层的树节点进行比较的高效算法</span><br><span class="line">diff整体策略为：深度优先，同层比较</span><br><span class="line">两个特点：</span><br><span class="line">比较只会在同层级进行, 不会跨层级比较</span><br><span class="line">在diff比较的过程中，循环从两边向中间比较</span><br><span class="line"></span><br><span class="line">render 函数</span><br><span class="line">render 函数是 Vue 组件中的一个方法，用于描述组件的视图结构。它返回一个虚拟 DOM 节点树 (VNode)，Vue 根据这个虚拟 DOM 树来更新真实 DOM。</span><br><span class="line"></span><br><span class="line">h 函数</span><br><span class="line">h 函数（也称为 createElement 函数）是用于创建虚拟 DOM 节点的工具。它是 render 函数的主要构建工具，用于生成虚拟 DOM 树。</span><br><span class="line"></span><br><span class="line">patch 函数</span><br><span class="line">patch 函数是虚拟 DOM 操作的核心，用于比较新旧虚拟 DOM 树，并将变化应用到真实 DOM 上。它是 Vue 内部的一个重要机制，确保视图更新的高效性。</span><br></pre></td></tr></table></figure>
-
-<h2 id="Vue项目中有封装过axios吗？主要是封装哪方面的？"><a href="#Vue项目中有封装过axios吗？主要是封装哪方面的？" class="headerlink" title=".  Vue项目中有封装过axios吗？主要是封装哪方面的？"></a>.  Vue项目中有封装过axios吗？主要是封装哪方面的？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1.设置接口请求前缀</span><br><span class="line">利用node环境变量来作判断，用来区分开发、测试、生产环境</span><br><span class="line">在本地调试的时候，还需要在vue.config.js文件中配置devServer实现代理转发，从而实现跨域</span><br><span class="line">2.设置请求头与超时时间</span><br><span class="line">3.封装请求方法</span><br><span class="line">先引入封装好的方法，在要调用的接口重新封装成一个方法暴露出去</span><br><span class="line">4.请求拦截器</span><br><span class="line">请求拦截器可以在每个请求里加上token，做了统一处理后维护起来也方便</span><br><span class="line">5.响应拦截器</span><br><span class="line">响应拦截器可以在接收到响应后先做一层操作，如根据状态码判断登录状态、授权</span><br></pre></td></tr></table></figure>
-
-<h2 id="Vue项目中你是如何解决跨域的呢？"><a href="#Vue项目中你是如何解决跨域的呢？" class="headerlink" title=". Vue项目中你是如何解决跨域的呢？"></a>. Vue项目中你是如何解决跨域的呢？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1. JSONP (JSON with Padding)</span><br><span class="line">JSONP 是一种通过 &lt;script&gt; 标签实现跨域请求的方法。它只能用于 GET 请求。</span><br><span class="line">2. CORS (Cross-Origin Resource Sharing)</span><br><span class="line">CORS 是一种 W3C 标准，它允许服务器通过 HTTP 头来指示哪些来源站点可以访问该服务器的资源。服务器需要配置相应的响应头：</span><br><span class="line">3. 代理服务器</span><br><span class="line">通过设置代理服务器，可以让前端向同源的代理服务器发送请求，再由代理服务器向目标服务器发送请求，代理服务器接收到响应后再返回给前端。</span><br><span class="line">4. Nginx 反向代理</span><br><span class="line">使用 Nginx 配置反向代理，将请求代理到目标服务器。</span><br><span class="line">5. 使用 HTML5 的 iframe 和 postMessage</span><br><span class="line">通过在父页面和子页面之间使用 iframe 和 postMessage 来实现跨域通信。</span><br></pre></td></tr></table></figure>
-
+<ol>
+<li>beforeCreate     插件开发中执行一些初始化任务</li>
+<li>created	        用于异步数据获取</li>
+<li>beforeMount	    未执行渲染、更新，dom未创建</li>
+<li>mounted	        用于获取访问数据和dom元素</li>
+<li>beforeUpdate     用于获取更新前各种状态</li>
+<li>updated	        更新后，所有状态已是最新</li>
+<li>beforeDestroy	  用于一些定时器或订阅的取消</li>
+<li>destroyed	      组件已销毁，作用同上</li>
+</ol>
+<h2 id="说说你对keep-alive的理解是什么？缓存后如何获取数据"><a href="#说说你对keep-alive的理解是什么？缓存后如何获取数据" class="headerlink" title=". 说说你对keep-alive的理解是什么？缓存后如何获取数据?"></a>. 说说你对keep-alive的理解是什么？缓存后如何获取数据?</h2><ol>
+<li><p>设置了 keep-alive 缓存的组件，会多出两个生命周期钩子（activated与deactivated）：<br>首次：beforeRouteEnter &gt; beforeCreate &gt; created&gt; mounted &gt; activated &gt; … … &gt; beforeRouteLeave &gt; deactivated<br>再次：beforeRouteEnter &gt;activated &gt; … … &gt; beforeRouteLeave &gt; deactivated</p>
+</li>
+<li><p>获取数据：<br>beforeRouteEnter<br>actived<br>注意：服务器端渲染期间avtived不被调用</p>
+</li>
+</ol>
+<h2 id="在created和mounted这两个生命周期中请求数据有什么区别呢？"><a href="#在created和mounted这两个生命周期中请求数据有什么区别呢？" class="headerlink" title=". 在created和mounted这两个生命周期中请求数据有什么区别呢？"></a>. 在created和mounted这两个生命周期中请求数据有什么区别呢？</h2><p>created是在组件实例一旦创建完成的时候立刻调用，页面dom节点并未生成；mounted是在页面dom节点渲染完毕之后就立刻执行的。都能拿到实例对象的属性和方法。放在mounted中的请求有可能导致页面闪动（因为此时页面dom结构已经生成），但如果在页面加载前完成请求，则不会出现此情况。建议对页面内容的改动放在created生命周期当中。</p>
+<h2 id="v-if和v-for的优先级是什么？"><a href="#v-if和v-for的优先级是什么？" class="headerlink" title=". v-if和v-for的优先级是什么？"></a>. v-if和v-for的优先级是什么？</h2><p>v-for与v-if作用在不同标签时候，是先进行判断，再进行列表的渲染<br>同一标签进行if判断的时候，v-for是比v-if先进行判断，v-for优先级比v-if高</p>
+<p>永远不要把 v-if 和 v-for 同时用在同一个元素上，带来性能方面的浪费（每次渲染都会先循环再进行条件判断）</p>
+<h2 id="Vue组件之间的通信方式都有哪些？"><a href="#Vue组件之间的通信方式都有哪些？" class="headerlink" title=". Vue组件之间的通信方式都有哪些？"></a>. Vue组件之间的通信方式都有哪些？</h2><p>vue中8种常规的通信方案</p>
+<ol>
+<li>通过 props 传递  父–&gt;子</li>
+<li>通过 $emit 触发自定义事件   子–&gt;父<br>子组件通过$emit触发自定义事件，$emit第二个参数为传递的数值<br>父组件绑定监听器获取到子组件传递过来的参数</li>
+<li>使用 ref   子–&gt;父   通过获取dom元素传值</li>
+<li>EventBus   兄–&gt;兄</li>
+<li>$parent 或$root   兄–&gt;兄     通过共同祖辈$parent或者$root搭建通信桥连</li>
+<li>attrs 与 listeners   祖–&gt;孙  </li>
+<li>Provide 与 Inject    祖–&gt;孙<br>在祖先组件定义provide属性，返回传递的值<br>在后代组件通过inject接收组件传递过来的值</li>
+<li>Vuex  –&gt;复杂关系的组件数据传递<br>Vuex作用相当于一个用来存储共享变量的容器</li>
+</ol>
+<h2 id="VueX"><a href="#VueX" class="headerlink" title=".  VueX"></a>.  VueX</h2><ol>
+<li>state用来存放共享变量的地方</li>
+<li>getter，可以增加一个getter派生状态，(相当于store中的计算属性），用来获得共享变量的值</li>
+<li>mutations用来存放修改state的方法。</li>
+<li>actions也是用来存放修改state的方法，不过action是在mutations的基础上进行。常用来做一些异步操作</li>
+</ol>
+<h2 id="Vue中的-nextTick有什么作用？"><a href="#Vue中的-nextTick有什么作用？" class="headerlink" title=".  Vue中的$nextTick有什么作用？"></a>.  Vue中的$nextTick有什么作用？</h2><p>&#36;nextTick的主要作用是延迟执行某些代码，直到 Vue 完成更新 DOM。用于在数据变化引发的 DOM 更新完成后执行延迟回调。</p>
+<h2 id="你了解vue的diff算法吗？说说看？"><a href="#你了解vue的diff算法吗？说说看？" class="headerlink" title=".  你了解vue的diff算法吗？说说看？"></a>.  你了解vue的diff算法吗？说说看？</h2><ol>
+<li><p>diff 算法是一种通过同层的树节点进行比较的高效算法<br>diff整体策略为：深度优先，同层比较</p>
+</li>
+<li><p>两个特点：<br>比较只会在同层级进行, 不会跨层级比较<br>在diff比较的过程中，循环从两边向中间比较</p>
+</li>
+<li><p>render 函数<br>render 函数是 Vue 组件中的一个方法，用于描述组件的视图结构。它返回一个虚拟 DOM 节点树 (VNode)，Vue 根据这个虚拟 DOM 树来更新真实 DOM。</p>
+</li>
+<li><p>h 函数<br>h 函数（也称为 createElement 函数）是用于创建虚拟 DOM 节点的工具。它是 render 函数的主要构建工具，用于生成虚拟 DOM 树。</p>
+</li>
+<li><p>patch 函数<br>patch 函数是虚拟 DOM 操作的核心，用于比较新旧虚拟 DOM 树，并将变化应用到真实 DOM 上。它是 Vue 内部的一个重要机制，确保视图更新的高效性。</p>
+</li>
+</ol>
+<h2 id="Vue项目中有封装过axios吗？主要是封装哪方面的？"><a href="#Vue项目中有封装过axios吗？主要是封装哪方面的？" class="headerlink" title=".  Vue项目中有封装过axios吗？主要是封装哪方面的？"></a>.  Vue项目中有封装过axios吗？主要是封装哪方面的？</h2><ol>
+<li>设置接口请求前缀<br>利用node环境变量来作判断，用来区分开发、测试、生产环境<br>在本地调试的时候，还需要在vue.config.js文件中配置devServer实现代理转发，从而实现跨域</li>
+<li>设置请求头与超时时间</li>
+<li>封装请求方法<br>先引入封装好的方法，在要调用的接口重新封装成一个方法暴露出去</li>
+<li>请求拦截器<br>请求拦截器可以在每个请求里加上token，做了统一处理后维护起来也方便</li>
+<li>响应拦截器<br>响应拦截器可以在接收到响应后先做一层操作，如根据状态码判断登录状态、授权</li>
+</ol>
+<h2 id="Vue项目中你是如何解决跨域的呢？"><a href="#Vue项目中你是如何解决跨域的呢？" class="headerlink" title=". Vue项目中你是如何解决跨域的呢？"></a>. Vue项目中你是如何解决跨域的呢？</h2><ol>
+<li>JSONP (JSON with Padding)<br>JSONP 是一种通过 &lt;script&gt; 标签实现跨域请求的方法。它只能用于 GET 请求。</li>
+<li>CORS (Cross-Origin Resource Sharing)<br>CORS 是一种 W3C 标准，它允许服务器通过 HTTP 头来指示哪些来源站点可以访问该服务器的资源。服务器需要配置相应的响应头：</li>
+<li>代理服务器<br>通过设置代理服务器，可以让前端向同源的代理服务器发送请求，再由代理服务器向目标服务器发送请求，代理服务器接收到响应后再返回给前端。</li>
+<li>Nginx 反向代理<br>使用 Nginx 配置反向代理，将请求代理到目标服务器。</li>
+<li>使用 HTML5 的 iframe 和 postMessage<br>通过在父页面和子页面之间使用 iframe 和 postMessage 来实现跨域通信。</li>
+</ol>
 
     </div>
 

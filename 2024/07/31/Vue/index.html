@@ -178,7 +178,8 @@
 <li><strong>声明式渲染</strong>：Vue 基于标准 HTML 拓展了一套模板语法，使得可以声明式地描述最终输出的 HTML 和 JavaScript 状态之间的关系。</li>
 <li><strong>响应性</strong>：Vue 会自动跟踪 JavaScript 状态并在其发生变化时响应式地更新 DOM</li>
 </ul>
-<h2 id="说说你对-vue-的理解"><a href="#说说你对-vue-的理解" class="headerlink" title=". 说说你对 vue 的理解"></a>. 说说你对 vue 的理解</h2><ol>
+<h2 id="说说你对-vue-的理解"><a href="#说说你对-vue-的理解" class="headerlink" title=". 说说你对 vue 的理解"></a>. 说说你对 vue 的理解</h2><p>Vue 是一个渐进式的 JavaScript 框架，通过响应式数据绑定、组件化系统、虚拟 DOM、高效的状态管理以及丰富的生态系统，帮助开发者灵活且高效地构建用户界面。</p>
+<ol>
 <li>渐进式框架</li>
 <li>组件化</li>
 <li>响应式系统</li>
@@ -189,14 +190,14 @@
 </ol>
 <h2 id="你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？"><a href="#你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？" class="headerlink" title=". 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？"></a>. 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？</h2><ol>
 <li>单页应用（Single Page Application, SPA）是一种Web应用程序，初次加载所需资源加载到浏览器中。通过JavaScript动态更新页面内容。通过发送网络请求和路由来实现数据获取和页面的导航。</li>
-<li>优:<br>用户体验好、快，内容的改变不需要重新加载整个页面。<br>具有桌面应用的即时性、网站的可移植性和可访问性。<br>良好的前后端分离，分工更明确。</li>
+<li>优:<br>用户体验好、快，内容的改变不需要重新加载整个页面。<br>代码复用性高。<br>良好的前后端分离，分工更明确。</li>
 <li>缺:<br>SEO不友好，不利于搜索引擎的抓取。<br>首次渲染速度相对较慢。</li>
 <li>实现SPA:<br>HTML结构：定义页面的基本结构。<br>路由功能：实现一个简单的路由系统，根据URL路径动态加载不同的内容。<br>内容更新：根据当前路由加载相应的内容。<br>事件监听：监听用户的导航行为（例如点击链接）并触发路由更新。</li>
 </ol>
 <h2 id="如何给SPA做SEO？"><a href="#如何给SPA做SEO？" class="headerlink" title=". 如何给SPA做SEO？"></a>. 如何给SPA做SEO？</h2><ol>
 <li>SSR服务端渲染<br>将组件或页面通过服务器生成html，再返回给浏览器，如Vue.js–&gt;Nuxt.js  React–&gt;Next.js</li>
 <li>静态化<br>（1）一种是通过程序将动态页面抓取并保存为静态页面，这样的页面的实际存在于服务器的硬盘中<br>（2）通过WEB服务器的 URL Rewrite的方式，把外部请求的静态地址转化为实际的动态页面地址，而静态页面实际是不存在的。</li>
-<li>使用Phantomjs针对爬虫处理</li>
+<li>使用工具针对爬虫处理，判断是否是搜索引擎，然后动态生成静态HTML页面返回给搜索引擎</li>
 </ol>
 <h2 id="请描述下你对vue生命周期的理解？"><a href="#请描述下你对vue生命周期的理解？" class="headerlink" title=". 请描述下你对vue生命周期的理解？"></a>. 请描述下你对vue生命周期的理解？</h2><p><img src="/../../images/vue/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Cover Image Description"></p>
 <ol>
@@ -261,6 +262,27 @@
 <li>代理服务器<br>通过设置代理服务器，可以让前端向同源的代理服务器发送请求，再由代理服务器向目标服务器发送请求，代理服务器接收到响应后再返回给前端。</li>
 <li>Nginx 反向代理<br>使用 Nginx 配置反向代理，将请求代理到目标服务器。</li>
 <li>使用 HTML5 的 iframe 和 postMessage<br>通过在父页面和子页面之间使用 iframe 和 postMessage 来实现跨域通信。</li>
+</ol>
+<h2 id="为什么data属性是一个函数而不是一个对象？"><a href="#为什么data属性是一个函数而不是一个对象？" class="headerlink" title=". 为什么data属性是一个函数而不是一个对象？"></a>. 为什么data属性是一个函数而不是一个对象？</h2><p>在根实例下data可以是对象也可以是函数，不会产生数据污染情况，但是在组件实例下data必须为函数，为了防止多个组件实例对象之间指向同一个data，产生数据污染。而采用函数的形式，初始化Data时会将其作为工厂函数，每次调用这个函数时，它都会生成并返回一个新的对象实例。</p>
+<h2 id="动态给vue的data添加一个新的属性时会发生什么？怎样解决？"><a href="#动态给vue的data添加一个新的属性时会发生什么？怎样解决？" class="headerlink" title=". 动态给vue的data添加一个新的属性时会发生什么？怎样解决？"></a>. 动态给vue的data添加一个新的属性时会发生什么？怎样解决？</h2><p>动态地给data添加一个新的属性时，该属性不会自动成为响应式属性</p>
+<ol>
+<li>使用 Vue.set 方法</li>
+<li>Object.assign()<br>当需要为对象添加多个属性时，可以用 Object.assign(target, obj1, obj2) 合并对象。target 为合并后的对象，obj1 和 obj2 为要合并的对象，当两个对象有相同的 key 时，后面的会覆盖前面的。 </li>
+<li>$forceUpdate()  重新渲染当前组件</li>
+</ol>
+<h2 id="双向数据绑定是什么"><a href="#双向数据绑定是什么" class="headerlink" title=". 双向数据绑定是什么"></a>. 双向数据绑定是什么</h2><p>双向数据绑定就是把Model和View绑定，其中一个更新另一个也更新。采用MVVM分层的架构，其中数据与视图关联的核心就是ViewModel，里面通过监听器和解析器来更新数据与视图。</p>
+<h2 id="说说你对vue的mixin的理解，有什么应用场景？"><a href="#说说你对vue的mixin的理解，有什么应用场景？" class="headerlink" title=". 说说你对vue的mixin的理解，有什么应用场景？"></a>. 说说你对vue的mixin的理解，有什么应用场景？</h2><p>  mixins 是一种复用代码的机制。mixins 将组件中可复用的逻辑提取到一个单独的对象中，然后可以在多个组件中引入和复用这些逻辑。</p>
+<h2 id="slot是什么"><a href="#slot是什么" class="headerlink" title=". slot是什么"></a>. slot是什么</h2><p>Web组件内的一个占位符,通过占位符拓展组件，去更好地复用组件和对其做定制化处理。</p>
+<ol>
+<li>默认插槽：未命名插槽，用于插入默认内容。</li>
+<li>具名插槽：带有名称的插槽，用于在组件中插入不同部分的内容。</li>
+<li>作用域插槽：带有作用域的插槽，允许在父组件中访问子组件的属性数据。</li>
+</ol>
+<h2 id="Vue-observable你有了解过吗？说说看"><a href="#Vue-observable你有了解过吗？说说看" class="headerlink" title=". Vue.observable你有了解过吗？说说看"></a>. Vue.observable你有了解过吗？说说看</h2><p>Vue.observable 是 一个用于创建响应式对象的全局 API。它允许你创建一个可以被观察的数据对象，这个对象的变化可以被 Vue 的响应式系统自动追踪，从而实现数据的双向绑定和自动更新。</p>
+<ol>
+<li>简单的状态管理</li>
+<li>非父子组件通信</li>
+<li>单文件组件间的状态共享：在单文件组件中，创建一个全局的响应式对象，可以在多个组件中使用这个对象，从而实现状态共享。</li>
 </ol>
 
     </div>

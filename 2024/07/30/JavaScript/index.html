@@ -208,7 +208,8 @@
 <h2 id="柯里化函数"><a href="#柯里化函数" class="headerlink" title=". 柯里化函数"></a>. 柯里化函数</h2><p>柯里化是函数式编程中的重要概念，通过将多参数函数转换为一系列单参数函数，使得代码更灵活、更易复用。它可以用于函数复用、延迟计算和函数配置等场景。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getArea</span>(<span class="params">width</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">height</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> width * height;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> getTenWidthArea = <span class="title function_">getArea</span>(<span class="number">10</span>);</span><br><span class="line"><span class="comment">// 之后碰到宽度为10的长方形就可以这样计算面积</span></span><br><span class="line"><span class="keyword">const</span> area1 = <span class="title function_">getTenWidthArea</span>(<span class="number">20</span>); <span class="comment">// 200</span></span><br><span class="line"><span class="comment">// 而且如果遇到宽度偶尔变化也可以轻松复用</span></span><br><span class="line"><span class="keyword">const</span> getTwentyWidthArea = <span class="title function_">getArea</span>(<span class="number">20</span>);</span><br><span class="line"><span class="keyword">const</span> area2 = <span class="title function_">getTwentyWidthArea</span>(<span class="number">15</span>); <span class="comment">// 300</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="说说你对作用域链的理解？"><a href="#说说你对作用域链的理解？" class="headerlink" title=". 说说你对作用域链的理解？"></a>. 说说你对作用域链的理解？</h2><ol>
+<h2 id="说说你对作用域链的理解？"><a href="#说说你对作用域链的理解？" class="headerlink" title=". 说说你对作用域链的理解？"></a>. 说说你对作用域链的理解？</h2><p>在Javascript中使用一个变量的时候，首先Javascript引擎会尝试在当前作用域下去寻找该变量，如果没找到，再到它的上层作用域寻找，以此类推直到找到该变量或是已经到了全局作用域</p>
+<ol>
 <li><p>全局作用域<br>任何不在函数中或是大括号中声明的变量，都是在全局作用域下，全局作用域下声明的变量可以在程序的任意位置访问</p>
 </li>
 <li><p>函数作用域<br>函数作用域也叫局部作用域，如果一个变量是在函数内部声明的它就在一个函数作用域下面。这些变量只能在函数内部访问，不能在函数以外去访问</p>
@@ -311,9 +312,9 @@
 <li>数组对象格式化</li>
 </ol>
 <h2 id="Javascript本地存储的方式有哪些？区别及应用场景？"><a href="#Javascript本地存储的方式有哪些？区别及应用场景？" class="headerlink" title=". Javascript本地存储的方式有哪些？区别及应用场景？"></a>. Javascript本地存储的方式有哪些？区别及应用场景？</h2><ol>
-<li>标记用户与跟踪用户行为的情况，推荐使用cookie</li>
-<li>适合长期保存在本地的数据（令牌），推荐使用localStorage</li>
-<li>敏感账号一次性登录，推荐使用sessionStorage</li>
+<li>标记用户与跟踪用户行为的情况，推荐使用cookie 4kb</li>
+<li>适合长期保存在本地的数据（令牌），推荐使用localStorage 5m</li>
+<li>敏感账号一次性登录，推荐使用sessionStorage 5m</li>
 <li>存储大量数据的情况、在线文档（富文本编辑器）保存编辑历史的情况，推荐使用indexedDB</li>
 </ol>
 <h2 id="说说你对函数式编程的理解？优缺点？"><a href="#说说你对函数式编程的理解？优缺点？" class="headerlink" title=". 说说你对函数式编程的理解？优缺点？"></a>. 说说你对函数式编程的理解？优缺点？</h2><p>函数式编程是一种”编程范式”（programming paradigm）<br>主要的编程范式有三种：命令式编程，声明式编程和函数式编程.</p>
@@ -333,6 +334,36 @@
 <li>防抖: n 秒后在执行该事件，若在 n 秒内被重复触发，则重新计时</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">debounce</span>(<span class="params">func, wait</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> timeout;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> context = <span class="variable language_">this</span>; <span class="comment">// 保存this指向</span></span><br><span class="line">        <span class="keyword">let</span> args = <span class="variable language_">arguments</span>; <span class="comment">// 拿到event对象</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">clearTimeout</span>(timeout)</span><br><span class="line">        timeout = <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">            func.<span class="title function_">apply</span>(context, args)</span><br><span class="line">        &#125;, wait);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="谈谈-JavaScript-中的类型转换机制"><a href="#谈谈-JavaScript-中的类型转换机制" class="headerlink" title=". 谈谈 JavaScript 中的类型转换机制"></a>. 谈谈 JavaScript 中的类型转换机制</h2><ol>
+<li>强制转换（显示转换）<br>Number()<br>parseInt()<br>String()<br>Boolean()</li>
+<li>自动转换（隐式转换）<br>  比较运算（&#x3D;&#x3D;、!&#x3D;、&gt;、&lt;）、if、while需要布尔值地方<br>  算术运算（+、-、*、&#x2F;、%）</li>
+</ol>
+<h2 id="说说-JavaScript-中内存泄漏的几种情况？"><a href="#说说-JavaScript-中内存泄漏的几种情况？" class="headerlink" title=". 说说 JavaScript 中内存泄漏的几种情况？"></a>. 说说 JavaScript 中内存泄漏的几种情况？</h2><p>不再需要的内存没有被及时释放</p>
+<ol>
+<li>全局变量泄漏</li>
+<li>闭包中的内存泄漏</li>
+<li>遗留的 DOM 引用</li>
+<li>未清理的定时器和回调</li>
+<li>事件监听器泄漏</li>
+</ol>
+<h2 id="说说-Javascript-数字精度丢失的问题，如何解决？"><a href="#说说-Javascript-数字精度丢失的问题，如何解决？" class="headerlink" title=". 说说 Javascript 数字精度丢失的问题，如何解决？"></a>. 说说 Javascript 数字精度丢失的问题，如何解决？</h2><ol>
+<li>使用整数运算</li>
+<li>使用 Math.round()</li>
+<li>使用库</li>
+</ol>
+<h2 id="如何判断一个元素是否在可视区域中？"><a href="#如何判断一个元素是否在可视区域中？" class="headerlink" title=". 如何判断一个元素是否在可视区域中？"></a>. 如何判断一个元素是否在可视区域中？</h2><ol>
+<li>offsetTop、scrollTop</li>
+<li>getBoundingClientRect</li>
+<li>Intersection Observer</li>
+</ol>
+<h2 id="大文件上传如何做断点续传？"><a href="#大文件上传如何做断点续传？" class="headerlink" title=". 大文件上传如何做断点续传？"></a>. 大文件上传如何做断点续传？</h2><ol>
+<li><p>分片上传<br>分片上传，就是将所要上传的文件，按照一定的大小，将整个文件分隔成多个数据块来进行分片上传</p>
+</li>
+<li><p>断点续传<br>断点续传指的是在下载或上传时，将下载或上传任务人为的划分为几个部分每一个部分采用一个线程进行上传或下载</p>
+</li>
+</ol>
+<h2 id="什么是单点登录？如何实现？"><a href="#什么是单点登录？如何实现？" class="headerlink" title=". 什么是单点登录？如何实现？"></a>. 什么是单点登录？如何实现？</h2><p>SSO 一般都需要一个独立的认证中心（passport），子系统的登录均得通过passport，子系统本身将不参与登录操作</p>
 
     </div>
 

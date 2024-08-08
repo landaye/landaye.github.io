@@ -208,8 +208,33 @@
 <li>使用 position: absolute</li>
 </ol>
 <h2 id="介绍一下-grid-网格布局和-Flexbox-弹性盒子布局"><a href="#介绍一下-grid-网格布局和-Flexbox-弹性盒子布局" class="headerlink" title=". 介绍一下 grid 网格布局和 Flexbox 弹性盒子布局"></a>. 介绍一下 grid 网格布局和 Flexbox 弹性盒子布局</h2><ol>
-<li>Grid 布局<br>Grid 布局是一种基于网格的二维布局系统，可以同时处理行和列。它特别适合复杂的布局，允许我们精确控制各个元素在网格中的位置。</li>
-<li>Flexbox 布局<br>Flexbox 布局是一种基于弹性盒子的布局模型，适用于一维布局，可以在行或列方向上对元素进行排列和对齐。它特别适合那些需要灵活、响应式布局的场景。</li>
+<li><p>Grid 布局<br>Grid 布局是一种基于网格的二维布局系统，可以同时处理行和列。它特别适合复杂的布局，允许我们精确控制各个元素在网格中的位置。</p>
+<ol start="2">
+<li>grid-template-columns: 定义列的宽度。</li>
+<li>grid-template-rows: 定义行的高度。</li>
+<li>grid-template-areas 用于定义 Grid 区域的布局，通过名称指定每个单元格所在的区域。</li>
+<li>grid-column-gap: 设置列间距。</li>
+<li>grid-row-gap: 设置行间距。</li>
+<li>grid-gap: 同时设置列和行的间距。</li>
+<li>grid-auto-columns: 定义自动生成的列的宽度。</li>
+<li>grid-auto-rows: 定义自动生成的行的高度。</li>
+<li>grid-auto-flow 控制自动放置的 Grid 项目的排列方式：</li>
+<li>justify-items: 设置项目在主轴（水平）上的对齐。</li>
+<li>align-items: 设置项目在交叉轴（垂直）上的对齐。</li>
+<li>justify-content: 设置容器内网格区域在主轴（水平）上的对齐。</li>
+<li>align-content: 设置容器内网格区域在交叉轴（垂直）上的对齐。</li>
+</ol>
+</li>
+<li><p>Flexbox 布局<br>Flexbox 布局是一种基于弹性盒子的布局模型，适用于一维布局，可以在行或列方向上对元素进行排列和对齐。它特别适合那些需要灵活、响应式布局的场景。<br>容器属性有：</p>
+<ol>
+<li>flex-direction 主轴的方向</li>
+<li>flex-wrap 沿主轴排列，是否可换行</li>
+<li>flex-flow flex-direction 属性和 flex-wrap 属性的简写形式，默认值为 row nowrap</li>
+<li>justify-content 主轴上的对齐方式</li>
+<li>align-items 交叉轴上对齐</li>
+<li>align-content 多根轴线的对齐方式</li>
+</ol>
+</li>
 </ol>
 <h2 id="如何实现单行／多行文本溢出的省略样式？"><a href="#如何实现单行／多行文本溢出的省略样式？" class="headerlink" title=". 如何实现单行／多行文本溢出的省略样式？"></a>. 如何实现单行／多行文本溢出的省略样式？</h2><ol>
 <li><p>单行文本溢出省略</p>

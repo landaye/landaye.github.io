@@ -245,13 +245,10 @@
 </ol>
 </li>
 <li><p>多行文本溢出省略<br> 基于高度截断 #伪元素 + 定位</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"> <span class="selector-class">.demo</span> &#123;</span><br><span class="line">     <span class="attribute">position</span>: relative;</span><br><span class="line">     <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">     <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">     <span class="attribute">overflow</span>: hidden;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.demo</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">     <span class="attribute">content</span>: <span class="string">&quot;...&quot;</span>;</span><br><span class="line">     <span class="attribute">position</span>: absolute;</span><br><span class="line">     <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">     <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">     <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span> <span class="number">10px</span>;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.demo</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.demo</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;...&quot;</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span> <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>基于行数截断</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">1px</span> solid red;</span><br><span class="line">    -webkit-<span class="selector-tag">line</span>-clamp: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    -webkit-box-orient: vertical;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<body>
-    <div class='demo'>这是一段很长的文本</div>
-</body>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">   基于行数截断</span><br><span class="line">   ```css</span><br><span class="line">   &lt;style&gt;</span><br><span class="line">    p &#123;</span><br><span class="line">        width: 400px;</span><br><span class="line">        border-radius: 1px solid red;</span><br><span class="line">        -webkit-line-clamp: 2;</span><br><span class="line">        display: -webkit-box;</span><br><span class="line">        -webkit-box-orient: vertical;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
 <h2 id="CSS-如何画一个三角形？原理是什么？"><a href="#CSS-如何画一个三角形？原理是什么？" class="headerlink" title=". CSS 如何画一个三角形？原理是什么？"></a>. CSS 如何画一个三角形？原理是什么？</h2><p>利用边框的特性。通过设置元素的宽度和高度为零，并且为不同边设置不同颜色的边框，可以创建各种方向的三角形。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-style</span>: solid;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">50px</span> <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">border-color</span>: transparent transparent <span class="number">#d9534f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -304,21 +301,21 @@
 
     <div class="container post-prev-next">
         
-        <a href="/2024/07/30/ES6/" class="next">
+        <a href="/2024/07/31/Vue/" class="next">
             <div>
                 <div class="text">
                     <p class="label">下一篇</p>
-                    <h3 class="title">ES6</h3>
+                    <h3 class="title">Vue</h3>
                 </div>
             </div>
         </a>
         
         
-        <a href="/2024/07/30/React/" class="prev">
+        <a href="/2024/07/30/ES6/" class="prev">
             <div>
                 <div class="text">
                     <p class="label">上一篇</p>
-                    <h3 class="title">React</>
+                    <h3 class="title">ES6</>
                 </div>
             </div>
         </a>

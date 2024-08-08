@@ -173,9 +173,97 @@
     <div class="content">
         <h1 id="文章内容"><a href="#文章内容" class="headerlink" title="文章内容"></a>文章内容</h1><hr>
 <h2 id="怎么理解回流跟重绘？什么场景下会触发？"><a href="#怎么理解回流跟重绘？什么场景下会触发？" class="headerlink" title=". 怎么理解回流跟重绘？什么场景下会触发？"></a>. 怎么理解回流跟重绘？什么场景下会触发？</h2><ol>
-<li>回流：布局引擎会根据各种样式计算每个盒子在页面上的大小与位置</li>
+<li>回流：布局引擎根据各种样式计算每个盒子在页面上的大小与位置</li>
 <li>重绘：当计算好盒模型的位置、大小及其他属性后，浏览器根据每个盒子特性进行绘制</li>
 </ol>
+<h2 id="说说你对盒子模型的理解"><a href="#说说你对盒子模型的理解" class="headerlink" title=". 说说你对盒子模型的理解?"></a>. 说说你对盒子模型的理解?</h2><p>浏览器的渲染引擎会根据标准之一的 CSS 基础框盒模型（CSS basic box model），将所有元素表示为一个个矩形的盒子（box）<br>一个盒子由四个部分组成：content、padding、border、margin。</p>
+<ol>
+<li>标准盒子模型：<br>width 和 height 属性只包括内容区域（content），不包括内边距、边框和外边距。<br>计算公式：元素总宽度 &#x3D; content width + padding + border + margin</li>
+<li>IE 怪异盒子模型：<br>width 和 height 属性包括内容区域、内边距和边框，但不包括外边距。<br>计算公式：元素总宽度 &#x3D; width + margin（width 已经包含了内容、内边距和边框）</li>
+</ol>
+<h2 id="css-选择器有哪些？优先级？哪些属性可以继承？"><a href="#css-选择器有哪些？优先级？哪些属性可以继承？" class="headerlink" title=". css 选择器有哪些？优先级？哪些属性可以继承？"></a>. css 选择器有哪些？优先级？哪些属性可以继承？</h2><ol>
+<li>css 属性选择器常用的有：<br>id 选择器（#box），选择 id 为 box 的元素<br>类选择器（.one），选择类名为 one 的所有元素<br>标签选择器（div），选择标签为 div 的所有元素<br>后代选择器（#box div），选择 id 为 box 元素内部所有的 div 元素<br>子选择器（.one&gt;one_1），选择父元素为.one 的所有.one_1 的元素<br>相邻同胞选择器（.one+.two），选择紧接在.one 之后的所有.two 元素<br>群组选择器（div,p），选择 div、p 的所有元素</li>
+<li>内联 &gt; ID 选择器 &gt; 类选择器 &gt; 标签选择器</li>
+</ol>
+<h2 id="css-中，有哪些方式可以隐藏页面元素？区别"><a href="#css-中，有哪些方式可以隐藏页面元素？区别" class="headerlink" title=". css 中，有哪些方式可以隐藏页面元素？区别?"></a>. css 中，有哪些方式可以隐藏页面元素？区别?</h2><ol>
+<li>display:none</li>
+<li>visibility:hidden</li>
+<li>opacity:0</li>
+<li>设置 height、width 模型属性为 0</li>
+<li>position:absolute</li>
+<li>clip-path</li>
+</ol>
+<h2 id="常见的块级元素，内联元素有哪些？"><a href="#常见的块级元素，内联元素有哪些？" class="headerlink" title=". 常见的块级元素，内联元素有哪些？"></a>. 常见的块级元素，内联元素有哪些？</h2><ol>
+<li><p>块级元素（Block Elements）<br>块级元素通常会占据其父容器的整个宽度，并且总是从新的一行开始。<br>div，p，h1，h6，ul，ol，li，section，article，header，footer，nav</p>
+</li>
+<li><p>内联元素（Inline Elements）<br>内联元素只占据它们所包含内容的宽度，不会独占一行。<br>span，a，img，strong，em，b，i，u，br，code</p>
+</li>
+</ol>
+<h2 id="如何实现-div-同一行显示？"><a href="#如何实现-div-同一行显示？" class="headerlink" title=". 如何实现 div 同一行显示？"></a>. 如何实现 div 同一行显示？</h2><ol>
+<li>使用 display: inline-block</li>
+<li>使用浮动（Float）</li>
+<li>使用 Flexbox</li>
+<li>使用 CSS Grid</li>
+<li>使用 transform 和 translateX</li>
+<li>使用 position: absolute</li>
+</ol>
+<h2 id="介绍一下-grid-网格布局和-Flexbox-弹性盒子布局"><a href="#介绍一下-grid-网格布局和-Flexbox-弹性盒子布局" class="headerlink" title=". 介绍一下 grid 网格布局和 Flexbox 弹性盒子布局"></a>. 介绍一下 grid 网格布局和 Flexbox 弹性盒子布局</h2><ol>
+<li>Grid 布局<br>Grid 布局是一种基于网格的二维布局系统，可以同时处理行和列。它特别适合复杂的布局，允许我们精确控制各个元素在网格中的位置。</li>
+<li>Flexbox 布局<br>Flexbox 布局是一种基于弹性盒子的布局模型，适用于一维布局，可以在行或列方向上对元素进行排列和对齐。它特别适合那些需要灵活、响应式布局的场景。</li>
+</ol>
+<h2 id="如何实现单行／多行文本溢出的省略样式？"><a href="#如何实现单行／多行文本溢出的省略样式？" class="headerlink" title=". 如何实现单行／多行文本溢出的省略样式？"></a>. 如何实现单行／多行文本溢出的省略样式？</h2><ol>
+<li><p>单行文本溢出省略</p>
+<ol>
+<li>overflow:hidden 隐藏溢出元素</li>
+<li>white-space:nowrap 文本不换行</li>
+<li>text-overflow 属性：<br>clip：当对象内文本溢出部分裁切掉<br>ellipsis：当对象内文本溢出时显示省略标记（…）</li>
+</ol>
+</li>
+<li><p>多行文本溢出省略<br> 基于高度截断 #伪元素 + 定位</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"> <span class="selector-class">.demo</span> &#123;</span><br><span class="line">     <span class="attribute">position</span>: relative;</span><br><span class="line">     <span class="attribute">line-height</span>: <span class="number">20px</span>;</span><br><span class="line">     <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">     <span class="attribute">overflow</span>: hidden;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="selector-class">.demo</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">     <span class="attribute">content</span>: <span class="string">&quot;...&quot;</span>;</span><br><span class="line">     <span class="attribute">position</span>: absolute;</span><br><span class="line">     <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">     <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">     <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span> <span class="number">10px</span>;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<body>
+    <div class='demo'>这是一段很长的文本</div>
+</body>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">   基于行数截断</span><br><span class="line">   ```css</span><br><span class="line">   &lt;style&gt;</span><br><span class="line">    p &#123;</span><br><span class="line">        width: 400px;</span><br><span class="line">        border-radius: 1px solid red;</span><br><span class="line">        -webkit-line-clamp: 2;</span><br><span class="line">        display: -webkit-box;</span><br><span class="line">        -webkit-box-orient: vertical;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    这是一些文本这是一些文本这是一些文本这是一些文本这是一些文本</span><br><span class="line">    这是一些文本这是一些文本这是一些文本这是一些文本这是一些文本</span><br><span class="line">&lt;/p &gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="CSS-如何画一个三角形？原理是什么？"><a href="#CSS-如何画一个三角形？原理是什么？" class="headerlink" title=". CSS 如何画一个三角形？原理是什么？"></a>. CSS 如何画一个三角形？原理是什么？</h2><p>利用边框的特性。通过设置元素的宽度和高度为零，并且为不同边设置不同颜色的边框，可以创建各种方向的三角形。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-style</span>: solid;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">50px</span> <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">border-color</span>: transparent transparent <span class="number">#d9534f</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>空心三角形</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-style</span>: solid;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">50px</span> <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">border-color</span>: transparent transparent <span class="number">#d9534f</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">border-style</span>: solid;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">40px</span> <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">border-color</span>: transparent transparent <span class="number">#96ceb4</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">left</span>: -<span class="number">40px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="让-Chrome-支持小于-12px-的文字方式有哪些？区别？"><a href="#让-Chrome-支持小于-12px-的文字方式有哪些？区别？" class="headerlink" title=". 让 Chrome 支持小于 12px 的文字方式有哪些？区别？"></a>. 让 Chrome 支持小于 12px 的文字方式有哪些？区别？</h2><ol>
+<li>zoom<br>zoom:50%，表示缩小到原来的一半<br>zoom:0.5，表示缩小到原来的一半</li>
+<li>-webkit-transform:scale()</li>
+<li>-webkit-text-size-adjust:none 谷歌浏览器有版本要求</li>
+</ol>
+<h2 id="说说对-Css-预编语言的理解？有哪些区别"><a href="#说说对-Css-预编语言的理解？有哪些区别" class="headerlink" title=". 说说对 Css 预编语言的理解？有哪些区别?"></a>. 说说对 Css 预编语言的理解？有哪些区别?</h2><p>CSS 预编译语言通过添加变量、嵌套规则、混入（mixins）、函数和继承等功能，简化了 CSS 的编写和管理。经过编译器转换成标准的 CSS 代码，然后渲染。</p>
+<ol>
+<li>sass</li>
+<li>less</li>
+<li>stylus</li>
+</ol>
+<p>主要区别</p>
+<ol>
+<li>语法不同：<br>Stylus 支持无括号和无分号的极简语法。</li>
+<li>变量表示不同：<br>Sass 使用 $ 符号定义变量。<br>LESS 使用 @ 符号定义变量。<br>Stylus 直接定义变量。</li>
+<li>函数和混入：<br>Sass 和 Stylus 支持复杂的函数和混入。<br>LESS 的混入相对简单，但也提供基本功能。</li>
+</ol>
+<h2 id="什么是响应式设计？响应式设计的基本原理是什么？如何做？"><a href="#什么是响应式设计？响应式设计的基本原理是什么？如何做？" class="headerlink" title=". 什么是响应式设计？响应式设计的基本原理是什么？如何做？"></a>. 什么是响应式设计？响应式设计的基本原理是什么？如何做？</h2><p>响应式设计是一种网页设计理念，通过动态调整布局和内容来适应不同的屏幕尺寸和设备特性。</p>
+<ol>
+<li>流式布局：使用相对单位来定义布局的宽度和元素的尺寸，而不是固定的像素值。</li>
+<li>媒体查询：使用 CSS 媒体查询来应用不同的样式规则，针对不同的设备特性进行调整。</li>
+<li>弹性网格：使用弹性网格系统来创建布局，这种布局根据设备的屏幕尺寸自动调整。</li>
+<li>选择断点，针对不同断点实现不同布局和内容展示。</li>
+</ol>
+<h2 id="元素水平垂直居中的方法有哪些？如果元素不定宽高是否可以呢？"><a href="#元素水平垂直居中的方法有哪些？如果元素不定宽高是否可以呢？" class="headerlink" title=". 元素水平垂直居中的方法有哪些？如果元素不定宽高是否可以呢？"></a>. 元素水平垂直居中的方法有哪些？如果元素不定宽高是否可以呢？</h2><p>利用定位+margin:auto 可以<br>利用定位+margin:负值<br>利用定位+transform 可以<br>table 布局<br>flex 布局 可以<br>grid 布局 可以</p>
+<h2 id="谈谈你对-BFC-的理解？"><a href="#谈谈你对-BFC-的理解？" class="headerlink" title=". 谈谈你对 BFC 的理解？"></a>. 谈谈你对 BFC 的理解？</h2><p>一个块级格式化上下文(作用域)，它在布局过程中形成一个独立的区域，用于控制块级元素的排版和浮动行为。内部子元素不会影响外部元素<br>BFC 的作用：<br>防止元素重叠：BFC 可以解决浮动元素之间的重叠问题。<br>处理外边距折叠：(margin 重叠)两个相邻块级元素之间的垂直外边距合并成一个外边距的现象<br>清除浮动: 子元素是浮动的，父元素的高度可能会被压缩</p>
+<h2 id="如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？"><a href="#如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？" class="headerlink" title=". 如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？"></a>. 如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？</h2><p>两栏布局，右侧自适应：可以使用 Flexbox、Grid 或传统的浮动布局实现。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex; <span class="comment">/* 启用 Flexbox 布局 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>; <span class="comment">/* 左侧固定宽度 */</span></span><br><span class="line">  <span class="attribute">background</span>: lightcoral;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 右侧自适应剩余空间 */</span></span><br><span class="line">  <span class="attribute">background</span>: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">1</span>fr; <span class="comment">/* 左侧固定宽度，右侧自适应 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lightcoral;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden; <span class="comment">/* 清除浮动 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>; <span class="comment">/* 左侧固定宽度 */</span></span><br><span class="line">  <span class="attribute">background</span>: lightcoral;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">200px</span>; <span class="comment">/* 右侧从左侧宽度起始 */</span></span><br><span class="line">  <span class="attribute">background</span>: lightblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>三栏布局，中间自适应：可以使用 Flexbox、Grid 或传统的浮动布局实现。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex; <span class="comment">/* 启用 Flexbox 布局 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span>,</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>; <span class="comment">/* 左右两侧固定宽度 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/* 中间栏自适应剩余空间 */</span></span><br><span class="line">  <span class="attribute">background</span>: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lightcoral;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lightgreen;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">150px</span> <span class="number">1</span>fr <span class="number">150px</span>; <span class="comment">/* 左右固定宽度，中间自适应 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lightcoral;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lightgreen;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden; <span class="comment">/* 清除浮动 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span>,</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>; <span class="comment">/* 左右两侧固定宽度 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">150px</span>; <span class="comment">/* 从左侧栏宽度开始 */</span></span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">150px</span>; <span class="comment">/* 到右侧栏宽度结束 */</span></span><br><span class="line">  <span class="attribute">background</span>: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: lightcoral;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: right; <span class="comment">/* 右侧栏浮动到右边 */</span></span><br><span class="line">  <span class="attribute">background</span>: lightgreen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -191,21 +279,21 @@
 
     <div class="container post-prev-next">
         
-        <a href="/2024/07/30/ES6/" class="next">
+        <a href="/2024/07/31/Vue/" class="next">
             <div>
                 <div class="text">
                     <p class="label">下一篇</p>
-                    <h3 class="title">ES6</h3>
+                    <h3 class="title">Vue</h3>
                 </div>
             </div>
         </a>
         
         
-        <a href="/2024/07/30/React/" class="prev">
+        <a href="/2024/07/30/ES6/" class="prev">
             <div>
                 <div class="text">
                     <p class="label">上一篇</p>
-                    <h3 class="title">React</>
+                    <h3 class="title">ES6</>
                 </div>
             </div>
         </a>

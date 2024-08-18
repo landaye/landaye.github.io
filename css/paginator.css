@@ -6,21 +6,20 @@
 }
 
 .paginator>* {
-    border-radius: 32px;
+    border-radius: 3px;
     padding: 6px 12px;
     margin: 0 2px;
     user-select: none;
     transition: all 0.2s;
 }
 
-.paginator>*:hover {
-    background-color: var(--card-bg);
-}
 
-.paginator>*:active {
-    background-color: var(--card-border);
+.paginator span{
+    background-color: var(--black);
+    border:1px solid var(--black);
+    color: var(--white);
 }
-
-.paginator .current:hover {
-    background-color: transparent;
+.paginator a{
+    border:1px solid var(--black-4);
+    color: var(--black);
 }

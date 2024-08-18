@@ -22,7 +22,7 @@
   
   <meta property="og:url" content="https://landaye.github.io/2024/07/30/React/index.html" />
   
-  <meta property="og:image" content="../../images/abstract-8750691_1280.png" />
+  <meta property="og:image" content="../../images/react/logo.svg" />
   
   <meta property="og:article:published_time" content="2024-07-30T08:30:00.000Z" />
   
@@ -99,7 +99,7 @@
     >
         <nav id="theme-nav">
   <div class="inner">
-    <a class="title" href="/">Blog</a>
+    <a class="title" href="/">主页</a>
     <div class="nav-arrow"></div>
     <div class="nav-items">
       <a class="nav-item nav-item-home" href="/"
@@ -187,7 +187,29 @@
 <li>Virtual Dom，本质上是以 JavaScript 对象形式存在的对 DOM 的描述</li>
 <li>区别:<br>虚拟 DOM 不会进行排版与重绘操作,而真实 DOM 会频繁重排与重绘</li>
 </ol>
-<h2 id="说说-React-生命周期有哪些不同阶段？每个阶段对应的方法是？"><a href="#说说-React-生命周期有哪些不同阶段？每个阶段对应的方法是？" class="headerlink" title=". 说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？"></a>. 说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？</h2><h2 id="React-怎么优化渲染性能？"><a href="#React-怎么优化渲染性能？" class="headerlink" title=". React 怎么优化渲染性能？"></a>. React 怎么优化渲染性能？</h2><ol>
+<h2 id="说说-React-生命周期有哪些不同阶段？每个阶段对应的方法是？"><a href="#说说-React-生命周期有哪些不同阶段？每个阶段对应的方法是？" class="headerlink" title=". 说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？"></a>. 说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？</h2><ol>
+<li>挂载阶段（Mounting）：<ol>
+<li>constructor(props)：组件的构造函数，用于初始化 state 和绑定事件处理方法。</li>
+<li>static getDerivedStateFromProps(props, state)：用于根据新的 props 更新 state。</li>
+<li>render()：返回要渲染的 React 元素，是必须实现的方法。</li>
+<li>componentDidMount()：在组件挂载后立即调用，适合进行网络请求、订阅事件等初始化操作。</li>
+</ol>
+</li>
+<li>更新阶段（Updating）：<ol>
+<li>static getDerivedStateFromProps(props, state)：在此阶段也会被调用。</li>
+<li>shouldComponentUpdate(nextProps, nextState)：用于控制组件是否重新渲染。</li>
+<li>render()：重新渲染组件。</li>
+<li>getSnapshotBeforeUpdate(prevProps, prevState)：在最近一次渲染输出（提交到 DOM 节点）之前调用。</li>
+<li>componentDidUpdate(prevProps, prevState, snapshot)：在更新后立即调用。</li>
+</ol>
+</li>
+<li>卸载阶段（Unmounting）：<ol>
+<li>componentWillUnmount()：在组件卸载前调用，用于清理资源，如取消网络请求、移除监听器等。</li>
+</ol>
+</li>
+<li>错误处理阶段，包括 componentDidCatch(error, info) 方法，用于捕获子组件树中的错误。</li>
+</ol>
+<h2 id="React-怎么优化渲染性能？"><a href="#React-怎么优化渲染性能？" class="headerlink" title=". React 怎么优化渲染性能？"></a>. React 怎么优化渲染性能？</h2><ol>
 <li>使用 React.memo<br>对于函数组件，使用 React.memo 可以防止在 props 没有变化时重新渲染组件。React.memo 会对 props 进行浅比较，如果没有变化就不会触发重新渲染。</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">MyComponent</span> = <span class="title class_">React</span>.<span class="title function_">memo</span>(<span class="function">(<span class="params">props</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;props.value&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -243,6 +265,38 @@
 <ol start="3">
 <li>使用 LocalStorage 或 SessionStorage 进行持久化缓存<br>可以将数据缓存到 localStorage 或 sessionStorage 中，这样即使用户刷新页面，数据依然存在。</li>
 </ol>
+<h2 id="react-组件间通信方式"><a href="#react-组件间通信方式" class="headerlink" title=". react 组件间通信方式"></a>. react 组件间通信方式</h2><ol>
+<li>Props（属性）<br>父组件到子组件：<br>父组件可以通过 props 将数据传递给子组件。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">ParentComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">ChildComponent</span> <span class="attr">message</span>=<span class="string">&quot;Hello from Parent&quot;</span> /&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ChildComponent</span>(<span class="params">&#123; message &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;message&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>子组件到父组件：<br>子组件可以通过调用 props 中的回调函数将数据传递给父组件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">ParentComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleChildClick</span> = (<span class="params">childData</span>) =&gt; &#123;</span><br><span class="line">    <span class="comment">// 处理子组件传递的数据</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">ChildComponent</span> <span class="attr">onChildClick</span>=<span class="string">&#123;handleChildClick&#125;</span> /&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ChildComponent</span>(<span class="params">&#123; onChildClick &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleClick</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">onChildClick</span>(<span class="string">&quot;Data from Child&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;handleClick&#125;</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Context API<br>Context 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建 Context：</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyContext</span> = <span class="title class_">React</span>.<span class="title function_">createContext</span>(defaultValue);</span><br><span class="line"><span class="comment">//父组件提供数据：</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ParentComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&quot;Hello from Parent&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ChildComponent</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//子组件消费数据：</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ChildComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> context = <span class="title function_">useContext</span>(<span class="title class_">MyContext</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;context&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Refs<br>使用 ref 可以获取组件实例，从而调用实例的方法或访问其属性。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">ParentComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> childRef = <span class="title function_">useRef</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">focusChild</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    childRef.<span class="property">current</span>.<span class="title function_">focus</span>();</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ChildComponent</span> <span class="attr">ref</span>=<span class="string">&#123;childRef&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;focusChild&#125;</span>&gt;</span>Focus Child<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ChildComponent</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  focus = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> /&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Events（事件）<br>通过在父组件中定义事件处理函数，并在子组件中触发该事件。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">ParentComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleCustomEvent</span> = (<span class="params">eventData</span>) =&gt; &#123;</span><br><span class="line">    <span class="comment">// 处理事件</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ChildComponent</span> <span class="attr">onCustomEvent</span>=<span class="string">&#123;handleCustomEvent&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ChildComponent</span>(<span class="params">&#123; onCustomEvent &#125;</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">triggerEvent</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">onCustomEvent</span>(<span class="string">&quot;data from child&quot;</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;triggerEvent&#125;</span>&gt;</span>Trigger Event<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>Redux<br>Redux 是一个独立于 React 的状态管理库，但它经常与 React 一起使用。</li>
+</ol>
+<p>Action： 一个描述发生了什么的对象。 Reducer： 根据旧的 state 和 action 返回新的 state 的函数。 Store： 整个应用的状态中心。</p>
+<ol start="6">
+<li>useReducer 和 useContext<br>useReducer 和 useContext 可以一起使用，以实现类似 Redux 的状态管理，而不需要引入额外的库。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">MyContext</span> = <span class="title class_">React</span>.<span class="title function_">createContext</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">reducer</span>(<span class="params">state, action</span>) &#123;</span><br><span class="line">  <span class="comment">// 根据action处理state</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ParentComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [state, dispatch] = <span class="title function_">useReducer</span>(reducer, initialState);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyContext.Provider</span> <span class="attr">value</span>=<span class="string">&#123;&#123;</span> <span class="attr">state</span>, <span class="attr">dispatch</span> &#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ChildComponent</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyContext.Provider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ChildComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; state, dispatch &#125; = <span class="title function_">useContext</span>(<span class="title class_">MyContext</span>);</span><br><span class="line">  <span class="comment">// 使用 state 和 dispatch</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/">https://vue3js.cn/interview/</a></p>
 
     </div>
 
@@ -289,70 +343,94 @@
     <div class="inner">
         <div class="links">
             
-            <div class="group">
-                <h2 class="title">Blog</h2>
+                <div class="group">
+                    <h2 class="title">
+                        Blog
+                    </h2>
+                    
+                        <a href="/" class="item">
+                            主页
+                        </a>
+                        
+                        <a href="/archives" class="item">
+                            全部
+                        </a>
+                        
+                        <a href="/categories" class="item">
+                            分类
+                        </a>
+                        
+                        <a href="/friends" class="item">
+                            朋友
+                        </a>
+                        
+                        <a href="/about" class="item">
+                            关于
+                        </a>
+                        
+                </div>
                 
-                <a href="/" class="item">Blog</a>
+                <div class="group">
+                    <h2 class="title">
+                        Projects
+                    </h2>
+                    
+                        <a target="_blank" rel="noopener" href="https://gitee.com/low-keyZ/aj" class="item">
+                            Anju
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://gitee.com/low-keyZ/axing" class="item">
+                            Axing
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://github.com/landaye/cqyt" class="item">
+                            cqyt
+                        </a>
+                        
+                </div>
                 
-                <a href="/archives" class="item">全部</a>
+                <div class="group">
+                    <h2 class="title">
+                        Me
+                    </h2>
+                    
+                        <a target="_blank" rel="noopener" href="https://github.com/landaye/landaye.github.io.git" class="item">
+                            GitHub
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://codepen.io/landaye" class="item">
+                            CodePen
+                        </a>
+                        
+                        <a href="a2219816262@163.com" class="item">
+                            Email
+                        </a>
+                        
+                </div>
                 
-                <a href="/categories" class="item">分类</a>
-                
-                <a href="/search" class="item">搜索</a>
-                
-                <a href="/friends" class="item">朋友</a>
-                
-                <a href="/projects" class="item">项目</a>
-                
-                <a href="/about" class="item">关于</a>
-                
-            </div>
-            
-            <div class="group">
-                <h2 class="title">Projects</h2>
-                
-                <a target="_blank" rel="noopener" href="https://gitee.com/low-keyZ/aj" class="item">Anju</a>
-                
-                <a target="_blank" rel="noopener" href="https://gitee.com/low-keyZ/axing" class="item">Axing</a>
-                
-                <a target="_blank" rel="noopener" href="https://github.com/landaye/cqyt" class="item">cqyt</a>
-                
-            </div>
-            
-            <div class="group">
-                <h2 class="title">Me</h2>
-                
-                <a target="_blank" rel="noopener" href="https://github.com/landaye/landaye.github.io.git" class="item">GitHub</a>
-                
-                <a target="_blank" rel="noopener" href="https://codepen.io/landaye" class="item">CodePen</a>
-                
-                <a href="a2219816262@163.com" class="item">Email</a>
-                
-            </div>
-            
         </div>
-        <span>&copy; 2024 兰大爷<br>由 <a href="http://hexo.io/" target="_blank">Hexo</a> 驱动 </span>
+        <span>&copy; 2024
+                兰大爷<br>由 <a href="http://hexo.io/" target="_blank">Hexo</a> 驱动 </span>
         
-        
-            <br>
-            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
-                <label>
-                    <input type="radio" value="light">
-                    <span>Light</span>
-                </label>
-                <label>
-                    <input type="radio" value="dark">
-                    <span>Dark</span>
-                </label>
-                <label>
-                    <input type="radio" value="auto">
-                    <span>Auto</span>
-                </label>
-            </div>
-        
+                
+                    <br>
+                    <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                        <label>
+                            <input type="radio" value="light">
+                            <span>Light</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="dark">
+                            <span>Dark</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="auto">
+                            <span>Auto</span>
+                        </label>
+                    </div>
+                    
     </div>
 </footer>
-
 
         
 <script src="/js/main.js"></script>

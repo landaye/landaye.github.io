@@ -190,6 +190,8 @@
       toc.after(divider);
     }
   }
+
+  if (document.querySelector(".hero")) {
     const simpletext = document.querySelector(".hero");
     const simple = document.querySelector(".group");
     const observer = new IntersectionObserver((entries, observer) => {
@@ -201,4 +203,5 @@
       });
     });
     observer.observe(simpletext);
+  }
 })();

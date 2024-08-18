@@ -190,4 +190,17 @@
       toc.after(divider);
     }
   }
+  document.addEventListener("DOMContentLoaded", function () {
+    const simpletext = document.querySelector(".hero");
+    const simple = document.querySelector(".group");
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(simple);
+          simple.classList.add("home-title");
+        }
+      });
+    });
+    observer.observe(simpletext);
+  });
 })();

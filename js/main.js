@@ -203,5 +203,45 @@
       });
     });
     observer.observe(simpletext);
+
+    const largeAll = document.querySelectorAll(".large");
+    const music = document.querySelector(".music");
+    const divAll = document.querySelectorAll(".music>div");
+
+    simple.addEventListener("mouseover", function () {
+      largeAll.forEach((el, index) => {
+        el.classList.add("large-ani");
+        // el.style.animation = `wave ${animationDuration}s linear forwards 20`;
+      });
+      divAll.forEach((el, index) => {
+        const animationDuration = [
+          0.66, 0.76, 0.88, 1, 0.5, 0.9, 1.2, 0.65, 0.85, 1.1,
+        ][index];
+        el.style.animation = `wave ${animationDuration}s linear forwards infinite`;
+
+        const backgroundColors = [
+          "#8cfc73fe",
+          "#d7ea44fe",
+          "#f17b69fe",
+          "#8173fcfe",
+          "#8cfc73fe",
+          "#73fcd3fe",
+          "#cafc73fe",
+          "#fc73aafe",
+          "#fc7375fe",
+          "#73a1fcfe",
+        ];
+        el.style.backgroundColor =
+          backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+      });
+    });
+    simple.addEventListener("mouseout", function () {
+      divAll.forEach((el, index) => {
+        el.style.animationPlayState = "paused";
+      });
+      largeAll.forEach((el, index) => {
+        el.style.animationPlayState = "paused";
+      });
+    });
   }
 })();

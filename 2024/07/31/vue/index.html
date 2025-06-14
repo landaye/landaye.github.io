@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>Vue - 兰大爷</title>
+  
+    <link rel="shortcut icon" href="/../../theme-img/logo.svg">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="Vue - 兰大爷" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://landaye.github.io/2024/07/31/vue/index.html" />
+  
+  <meta property="og:image" content="../../images/vue/logo.svg" />
+  
+  <meta property="og:article:published_time" content="2024-07-31T07:30:00.000Z" />
+  
+  <meta property="og:article:author" content="兰大爷" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+  <div class="inner">
+    <a class="title" href="/">主页</a>
+    <div class="nav-arrow"></div>
+    <div class="nav-items">
+      <a class="nav-item nav-item-home" href="/"
+        >主页</a
+      >
+       
+      <a class="nav-item" href="/archives">全部</a>
+        
+      <a class="nav-item" href="/categories">分类</a>
+        
+      <a class="nav-item" href="/friends">朋友</a>
+        
+      <a class="nav-item" href="/projects">项目</a>
+        
+      <a class="nav-item" href="/about">关于</a>
+        
+      <a
+        class="nav-item nav-item-github nav-item-icon"
+        href="https://github.com/landaye/landaye.github.io.git"
+        target="_blank"
+        aria-label="GitHub"
+        >&nbsp;</a
+      >
+        
+      <a
+        class="nav-item nav-item-codepen nav-item-icon"
+        href="https://codepen.io/landaye"
+        target="_blank"
+        aria-label="CodePen"
+        >&nbsp;</a
+      >
+        
+      <a
+        class="nav-item nav-item-search nav-item-icon"
+        href="/search"
+        aria-label="Search"
+        >&nbsp;</a
+      >
+
+       
+    </div>
+  </div>
+</nav>
+
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/面试/">面试</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>July</span>
+            <span>31,</span>
+            <span>2024</span>
+        </div>
+        
+
+        <h1 class="title">Vue</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="文章内容"><a href="#文章内容" class="headerlink" title="文章内容"></a>文章内容</h1><hr>
+<h2 id="说说你对-vue-的理解"><a href="#说说你对-vue-的理解" class="headerlink" title=". 说说你对 vue 的理解"></a>. 说说你对 vue 的理解</h2><p>Vue 是一个渐进式的 JavaScript 框架，通过响应式数据绑定、组件化系统、虚拟 DOM、高效的状态管理以及丰富的生态系统，帮助开发者灵活且高效地构建用户界面。</p>
+<ol>
+<li>渐进式框架</li>
+<li>组件化</li>
+<li>响应式系统</li>
+<li>虚拟DOM</li>
+<li>单文件组件 (SFC)</li>
+<li>Vue CLI</li>
+<li>Vue Router 和 Vuex</li>
+</ol>
+<h2 id="你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？"><a href="#你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？" class="headerlink" title=". 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？"></a>. 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢？</h2><ol>
+<li>单页应用（Single Page Application, SPA）是一种Web应用程序，初次加载所需资源加载到浏览器中。通过JavaScript动态更新页面内容。通过发送网络请求和路由来实现数据获取和页面的导航。</li>
+<li>优:<br>用户体验好、快，内容的改变不需要重新加载整个页面。<br>代码复用性高。<br>良好的前后端分离，分工更明确。</li>
+<li>缺:<br>SEO不友好，不利于搜索引擎的抓取。<br>首次渲染速度相对较慢。</li>
+<li>实现SPA:<br>HTML结构：定义页面的基本结构。<br>路由功能：实现一个简单的路由系统，根据URL路径动态加载不同的内容。<br>内容更新：根据当前路由加载相应的内容。<br>事件监听：监听用户的导航行为（例如点击链接）并触发路由更新。</li>
+</ol>
+<h2 id="如何给SPA做SEO？"><a href="#如何给SPA做SEO？" class="headerlink" title=". 如何给SPA做SEO？"></a>. 如何给SPA做SEO？</h2><ol>
+<li>SSR服务端渲染<br>将组件或页面通过服务器生成html，再返回给浏览器，如Vue.js–&gt;Nuxt.js  React–&gt;Next.js</li>
+<li>静态化<br>（1）一种是通过程序将动态页面抓取并保存为静态页面，这样的页面的实际存在于服务器的硬盘中<br>（2）通过WEB服务器的 URL Rewrite的方式，把外部请求的静态地址转化为实际的动态页面地址，而静态页面实际是不存在的。</li>
+<li>使用工具针对爬虫处理，判断是否是搜索引擎，然后动态生成静态HTML页面返回给搜索引擎</li>
+</ol>
+<h2 id="请描述下你对vue生命周期的理解？"><a href="#请描述下你对vue生命周期的理解？" class="headerlink" title=". 请描述下你对vue生命周期的理解？"></a>. 请描述下你对vue生命周期的理解？</h2><p><img src="/../../images/vue/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Cover Image Description"></p>
+<ol>
+<li>beforeCreate     插件开发中执行一些初始化任务</li>
+<li>created	        用于异步数据获取</li>
+<li>beforeMount	    未执行渲染、更新，dom未创建</li>
+<li>mounted	        用于获取访问数据和dom元素</li>
+<li>beforeUpdate     用于获取更新前各种状态</li>
+<li>updated	        更新后，所有状态已是最新</li>
+<li>beforeDestroy	  用于一些定时器或订阅的取消</li>
+<li>destroyed	      组件已销毁，作用同上</li>
+</ol>
+<h2 id="说说你对keep-alive的理解是什么？缓存后如何获取数据"><a href="#说说你对keep-alive的理解是什么？缓存后如何获取数据" class="headerlink" title=". 说说你对keep-alive的理解是什么？缓存后如何获取数据?"></a>. 说说你对keep-alive的理解是什么？缓存后如何获取数据?</h2><ol>
+<li><p>设置了 keep-alive 缓存的组件，会多出两个生命周期钩子（activated与deactivated）：<br>首次：beforeRouteEnter &gt; beforeCreate &gt; created&gt; mounted &gt; activated &gt; … … &gt; beforeRouteLeave &gt; deactivated<br>再次：beforeRouteEnter &gt;activated &gt; … … &gt; beforeRouteLeave &gt; deactivated</p>
+</li>
+<li><p>获取数据：<br>beforeRouteEnter<br>actived<br>注意：服务器端渲染期间avtived不被调用</p>
+</li>
+</ol>
+<h2 id="在created和mounted这两个生命周期中请求数据有什么区别呢？"><a href="#在created和mounted这两个生命周期中请求数据有什么区别呢？" class="headerlink" title=". 在created和mounted这两个生命周期中请求数据有什么区别呢？"></a>. 在created和mounted这两个生命周期中请求数据有什么区别呢？</h2><p>created是在组件实例一旦创建完成的时候立刻调用，页面dom节点并未生成；mounted是在页面dom节点渲染完毕之后就立刻执行的。都能拿到实例对象的属性和方法。放在mounted中的请求有可能导致页面闪动（因为此时页面dom结构已经生成），但如果在页面加载前完成请求，则不会出现此情况。建议对页面内容的改动放在created生命周期当中。</p>
+<h2 id="v-if和v-for的优先级是什么？"><a href="#v-if和v-for的优先级是什么？" class="headerlink" title=". v-if和v-for的优先级是什么？"></a>. v-if和v-for的优先级是什么？</h2><p>v-for与v-if作用在不同标签时候，是先进行判断，再进行列表的渲染<br>同一标签进行if判断的时候，v-for是比v-if先进行判断，v-for优先级比v-if高</p>
+<p>永远不要把 v-if 和 v-for 同时用在同一个元素上，带来性能方面的浪费（每次渲染都会先循环再进行条件判断）</p>
+<h2 id="Vue组件之间的通信方式都有哪些？"><a href="#Vue组件之间的通信方式都有哪些？" class="headerlink" title=". Vue组件之间的通信方式都有哪些？"></a>. Vue组件之间的通信方式都有哪些？</h2><p>vue中8种常规的通信方案</p>
+<ol>
+<li>通过 props 传递  父–&gt;子</li>
+<li>通过 $emit 触发自定义事件   子–&gt;父<br>子组件通过$emit触发自定义事件，$emit第二个参数为传递的数值<br>父组件绑定监听器获取到子组件传递过来的参数</li>
+<li>使用 ref   子–&gt;父   通过获取dom元素传值</li>
+<li>EventBus   兄–&gt;兄</li>
+<li>$parent 或$root   兄–&gt;兄     通过共同祖辈$parent或者$root搭建通信桥连</li>
+<li>attrs 与 listeners   祖–&gt;孙  </li>
+<li>Provide 与 Inject    祖–&gt;孙<br>在祖先组件定义provide属性，返回传递的值<br>在后代组件通过inject接收组件传递过来的值</li>
+<li>Vuex  –&gt;复杂关系的组件数据传递<br>Vuex作用相当于一个用来存储共享变量的容器</li>
+</ol>
+<h2 id="VueX"><a href="#VueX" class="headerlink" title=".  VueX"></a>.  VueX</h2><ol>
+<li>state用来存放共享变量的地方</li>
+<li>getter，可以增加一个getter派生状态，(相当于store中的计算属性），用来获得共享变量的值</li>
+<li>mutations用来存放修改state的方法。</li>
+<li>actions也是用来存放修改state的方法，不过action是在mutations的基础上进行。常用来做一些异步操作</li>
+</ol>
+<h2 id="Vue中的-nextTick有什么作用？"><a href="#Vue中的-nextTick有什么作用？" class="headerlink" title=".  Vue中的$nextTick有什么作用？"></a>.  Vue中的$nextTick有什么作用？</h2><p>&#36;nextTick的主要作用是延迟执行某些代码，直到 Vue 完成更新 DOM。用于在数据变化引发的 DOM 更新完成后执行延迟回调。</p>
+<h2 id="你了解vue的diff算法吗？说说看？"><a href="#你了解vue的diff算法吗？说说看？" class="headerlink" title=".  你了解vue的diff算法吗？说说看？"></a>.  你了解vue的diff算法吗？说说看？</h2><ol>
+<li><p>diff 算法是一种通过同层的树节点进行比较的高效算法<br>diff整体策略为：深度优先，同层比较</p>
+</li>
+<li><p>两个特点：<br>比较只会在同层级进行, 不会跨层级比较<br>在diff比较的过程中，循环从两边向中间比较</p>
+</li>
+<li><p>render 函数<br>render 函数是 Vue 组件中的一个方法，用于描述组件的视图结构。它返回一个虚拟 DOM 节点树 (VNode)，Vue 根据这个虚拟 DOM 树来更新真实 DOM。</p>
+</li>
+<li><p>h 函数<br>h 函数（也称为 createElement 函数）是用于创建虚拟 DOM 节点的工具。它是 render 函数的主要构建工具，用于生成虚拟 DOM 树。</p>
+</li>
+<li><p>patch 函数<br>patch 函数是虚拟 DOM 操作的核心，用于比较新旧虚拟 DOM 树，并将变化应用到真实 DOM 上。它是 Vue 内部的一个重要机制，确保视图更新的高效性。</p>
+</li>
+</ol>
+<h2 id="Vue项目中有封装过axios吗？主要是封装哪方面的？"><a href="#Vue项目中有封装过axios吗？主要是封装哪方面的？" class="headerlink" title=".  Vue项目中有封装过axios吗？主要是封装哪方面的？"></a>.  Vue项目中有封装过axios吗？主要是封装哪方面的？</h2><ol>
+<li>设置接口请求前缀<br>利用node环境变量来作判断，用来区分开发、测试、生产环境<br>在本地调试的时候，还需要在vue.config.js文件中配置devServer实现代理转发，从而实现跨域</li>
+<li>设置请求头与超时时间</li>
+<li>封装请求方法<br>先引入封装好的方法，在要调用的接口重新封装成一个方法暴露出去</li>
+<li>请求拦截器<br>请求拦截器可以在每个请求里加上token，做了统一处理后维护起来也方便</li>
+<li>响应拦截器<br>响应拦截器可以在接收到响应后先做一层操作，如根据状态码判断登录状态、授权</li>
+</ol>
+<h2 id="Vue项目中你是如何解决跨域的呢？"><a href="#Vue项目中你是如何解决跨域的呢？" class="headerlink" title=". Vue项目中你是如何解决跨域的呢？"></a>. Vue项目中你是如何解决跨域的呢？</h2><ol>
+<li>JSONP (JSON with Padding)<br>JSONP 是一种通过 &lt;script&gt; 标签实现跨域请求的方法。它只能用于 GET 请求。</li>
+<li>CORS (Cross-Origin Resource Sharing)<br>CORS 是一种 W3C 标准，它允许服务器通过 HTTP 头来指示哪些来源站点可以访问该服务器的资源。服务器需要配置相应的响应头：</li>
+<li>代理服务器<br>通过设置代理服务器，可以让前端向同源的代理服务器发送请求，再由代理服务器向目标服务器发送请求，代理服务器接收到响应后再返回给前端。</li>
+<li>Nginx 反向代理<br>使用 Nginx 配置反向代理，将请求代理到目标服务器。</li>
+<li>使用 HTML5 的 iframe 和 postMessage<br>通过在父页面和子页面之间使用 iframe 和 postMessage 来实现跨域通信。</li>
+</ol>
+<h2 id="为什么data属性是一个函数而不是一个对象？"><a href="#为什么data属性是一个函数而不是一个对象？" class="headerlink" title=". 为什么data属性是一个函数而不是一个对象？"></a>. 为什么data属性是一个函数而不是一个对象？</h2><p>在根实例下data可以是对象也可以是函数，不会产生数据污染情况，但是在组件实例下data必须为函数，为了防止多个组件实例对象之间指向同一个data，产生数据污染。而采用函数的形式，初始化Data时会将其作为工厂函数，每次调用这个函数时，它都会生成并返回一个新的对象实例。</p>
+<h2 id="动态给vue的data添加一个新的属性时会发生什么？怎样解决？"><a href="#动态给vue的data添加一个新的属性时会发生什么？怎样解决？" class="headerlink" title=". 动态给vue的data添加一个新的属性时会发生什么？怎样解决？"></a>. 动态给vue的data添加一个新的属性时会发生什么？怎样解决？</h2><p>动态地给data添加一个新的属性时，该属性不会自动成为响应式属性</p>
+<ol>
+<li>使用 Vue.set 方法</li>
+<li>Object.assign()<br>当需要为对象添加多个属性时，可以用 Object.assign(target, obj1, obj2) 合并对象。target 为合并后的对象，obj1 和 obj2 为要合并的对象，当两个对象有相同的 key 时，后面的会覆盖前面的。 </li>
+<li>$forceUpdate()  重新渲染当前组件</li>
+</ol>
+<h2 id="双向数据绑定是什么"><a href="#双向数据绑定是什么" class="headerlink" title=". 双向数据绑定是什么"></a>. 双向数据绑定是什么</h2><p>双向数据绑定就是把Model和View绑定，其中一个更新另一个也更新。采用MVVM分层的架构，其中数据与视图关联的核心就是ViewModel，里面通过监听器和解析器来更新数据与视图。</p>
+<h2 id="说说你对vue的mixin的理解，有什么应用场景？"><a href="#说说你对vue的mixin的理解，有什么应用场景？" class="headerlink" title=". 说说你对vue的mixin的理解，有什么应用场景？"></a>. 说说你对vue的mixin的理解，有什么应用场景？</h2><p>  mixins 是一种复用代码的机制。mixins 将组件中可复用的逻辑提取到一个单独的对象中，然后可以在多个组件中引入和复用这些逻辑。</p>
+<h2 id="slot是什么"><a href="#slot是什么" class="headerlink" title=". slot是什么"></a>. slot是什么</h2><p>Web组件内的一个占位符,通过占位符拓展组件，去更好地复用组件和对其做定制化处理。</p>
+<ol>
+<li>默认插槽：未命名插槽，用于插入默认内容。</li>
+<li>具名插槽：带有名称的插槽，用于在组件中插入不同部分的内容。</li>
+<li>作用域插槽：带有作用域的插槽，允许在父组件中访问子组件的属性数据。</li>
+</ol>
+<h2 id="Vue-observable你有了解过吗？说说看"><a href="#Vue-observable你有了解过吗？说说看" class="headerlink" title=". Vue.observable你有了解过吗？说说看"></a>. Vue.observable你有了解过吗？说说看</h2><p>Vue.observable 是 一个用于创建响应式对象的全局 API。它允许你创建一个可以被观察的数据对象，这个对象的变化可以被 Vue 的响应式系统自动追踪，从而实现数据的双向绑定和自动更新。</p>
+<ol>
+<li>简单的状态管理</li>
+<li>非父子组件通信</li>
+<li>单文件组件间的状态共享：在单文件组件中，创建一个全局的响应式对象，可以在多个组件中使用这个对象，从而实现状态共享。</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a target="_blank" rel="noopener" href="https://vue3js.cn/interview/">https://vue3js.cn/interview/</a></p>
+
+    </div>
+
+    
+    <div class="about">
+        <h1>关于本文</h1>
+        <div class="details">
+            <p>由 兰大爷 撰写, 采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a> 许可协议.</p>
+        </div>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        
+        <a href="/2024/10/01/wsdx_fuban/" class="next">
+            <div>
+                <div class="text">
+                    <p class="label">下一篇</p>
+                    <h3 class="title">府办项目</h3>
+                </div>
+            </div>
+        </a>
+        
+        
+        <a href="/2024/07/30/Css/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">上一篇</p>
+                    <h3 class="title">Css</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+                <div class="group">
+                    <h2 class="title">
+                        Blog
+                    </h2>
+                    
+                        <a href="/" class="item">
+                            主页
+                        </a>
+                        
+                        <a href="/archives" class="item">
+                            全部
+                        </a>
+                        
+                        <a href="/categories" class="item">
+                            分类
+                        </a>
+                        
+                        <a href="/friends" class="item">
+                            朋友
+                        </a>
+                        
+                        <a href="/about" class="item">
+                            关于
+                        </a>
+                        
+                </div>
+                
+                <div class="group">
+                    <h2 class="title">
+                        Projects
+                    </h2>
+                    
+                        <a target="_blank" rel="noopener" href="https://gitee.com/Lan-Daye/aj" class="item">
+                            Anju
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://gitee.com/Lan-Daye/axing.git" class="item">
+                            Axing
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://github.com/landaye/cqyt" class="item">
+                            cqyt
+                        </a>
+                        
+                </div>
+                
+                <div class="group">
+                    <h2 class="title">
+                        Me
+                    </h2>
+                    
+                        <a target="_blank" rel="noopener" href="https://github.com/landaye/landaye.github.io.git" class="item">
+                            GitHub
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://codepen.io/landaye" class="item">
+                            CodePen
+                        </a>
+                        
+                        <a href="a2219816262@163.com" class="item">
+                            Email
+                        </a>
+                        
+                </div>
+                
+        </div>
+        <span>&copy; 2025
+                兰大爷<br>由 <a href="http://hexo.io/" target="_blank">Hexo</a> 驱动 </span>
+        
+                
+                    <br>
+                    <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                        <label>
+                            <input type="radio" value="light">
+                            <span>Light</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="dark">
+                            <span>Dark</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="auto">
+                            <span>Auto</span>
+                        </label>
+                    </div>
+                    
+    </div>
+</footer>
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>

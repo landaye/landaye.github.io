@@ -1,0 +1,295 @@
+
+.box{
+  height: auto;
+
+}
+.shop-choose {
+  width: 100%;
+  height: 40vw;
+  position: fixed;
+  z-index: 1;
+}
+
+.shop-choose .shop-choose-1 {
+  margin-left: 1%;
+  width: 100%;
+  font-size: 60px;
+  height: auto;
+  z-index: 1;
+  color: var(--footer-link-grey);
+}
+
+
+.shop-choose .text {
+  margin-left: 66%;
+  color: var(--footer-link-grey);
+}
+
+
+.img-box {
+  height: auto;
+  margin-top: 17%;
+  margin-bottom: 10%;
+  padding-left: 1%;
+  position: relative;
+  z-index: 55;
+}
+
+@media screen and (max-width: 1237px) {
+  .img-box {
+    margin-top: 25%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .img-box {
+    margin-top: 35%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .img-box {
+    margin-top: 65%;
+  }
+
+  .shop-choose .text {
+    margin-left: 56%;
+    font-size: 12px;
+  }
+}
+
+
+.img-style-1 {
+  width: 34vw;
+  height: 35vw;
+}
+
+.img-style-2 {
+  margin-top: -5%;
+  margin-left: 25%;
+  width: 19vw;
+  height: 20vw;
+}
+
+.img-style-3 {
+  margin-top: -40%;
+  margin-left: 60%;
+  width: 18vw;
+  height: 15vw;
+}
+
+.img-style-4 {
+  margin-top: 5%;
+  margin-left: 73%;
+  width: 19vw;
+  height: 20vw;
+}
+
+.img-style-5 {
+  margin-top: 10%;
+  margin-left: 60%;
+  width: 14vw;
+  height: 15vw;
+}
+
+.img-style-6 {
+  margin-left: 25%;
+  width: 24vw;
+  height: 25vw;
+}
+
+img {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.img-box img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  object-fit: cover;
+  filter: brightness(1);
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.25, 1),
+    filter 400ms cubic-bezier(0.4, 0, 0.25, 1);
+}
+
+.img-description p {
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.img-style-1:hover img,
+.img-style-2:hover img,
+.img-style-3:hover img,
+.img-style-4:hover img,
+.img-style-5:hover img,
+.img-style-6:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.85);
+}
+
+
+
+
+
+.bottom-title {
+  width: 100%;
+  height: auto;
+  left: 50%;
+  font-size: 55px;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+
+.tx {
+  transform-style: preserve-3d;
+  animation: flip-in2 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+
+@keyframes flip-in2 {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+
+
+
+img {
+  opacity: 0;
+}
+
+.tx2 {
+  animation: fadeIn 2s ease forwards;
+}
+
+/* 定义渐变显示的动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* 初始透明度为0 */
+  }
+
+  to {
+    opacity: 1;
+    /* 最终透明度为1 */
+  }
+}
+
+
+
+
+/* 弹窗 */
+.btn-alert {
+  display: block;
+  width: 400px;
+  height: auto;
+  background-color: #fff;
+  color: var(--footer-link-grey);
+  font-size: 40px;
+  margin: 20px auto 0;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 5px;
+}
+
+/* 遮罩层 */
+.alert {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, .4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8888;
+}
+
+.alert-body {
+  display: flex;
+  width: 720px;
+  height: 400px;
+  background-color: var(--body-bg);
+  font-size: 30px;
+  color: var(--footer-link-grey);
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.alert-title {
+  margin: 0;
+  padding: 0;
+}
+
+.alert-title img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+}
+
+.close:hover {
+  transform: scale(1.2);
+}
+
+.alert-content {
+  width: 320px;
+  height: 360px;
+  border: 20px solid var(--body-bg);
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.alert-content p {
+  font-size: 15px;
+}
+
+.alert-content h6 {
+  margin: 0;
+  padding: 0;
+  color: var(--black-2);
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .alert-body {
+    display: flex;
+    width: auto;
+    height: 400px;
+    font-size: 30px;
+  }
+
+  .alert-title img {
+    display: none;
+  }
+}
+
+.button {
+  border: none;
+  background-color: var(--body-bg);
+  cursor: pointer;
+}

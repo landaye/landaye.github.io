@@ -1,0 +1,39 @@
+.paginator {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    margin: 8px;
+}
+
+.paginator>* {
+    border-radius: 3px;
+    padding: 6px 12px;
+    margin: 0 2px;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+
+.paginator span {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    color: var(--white);
+}
+
+.paginator a {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid var(--black-4);
+    color: var(--black);
+    transition: transform 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    /* 针对 WebKit 引擎的浏览器 */
+    -moz-osx-font-smoothing: grayscale;
+    /* 针对 Firefox OS X */
+    text-rendering: optimizeLegibility;
+    /* 提高字体渲染清晰度 */
+}
+
+.paginator a:hover {
+    transform: translateY(2px);
+}

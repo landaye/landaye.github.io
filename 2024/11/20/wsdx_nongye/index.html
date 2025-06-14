@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>生态农业 - 兰大爷</title>
+  
+    <link rel="shortcut icon" href="/../../theme-img/logo.svg">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="生态农业 - 兰大爷" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="https://landaye.github.io/2024/11/20/wsdx_nongye/index.html" />
+  
+  <meta property="og:image" content="../../images/nongye/nongye.png" />
+  
+  <meta property="og:article:published_time" content="2024-11-20T02:00:00.000Z" />
+  
+  <meta property="og:article:author" content="兰大爷" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+  <div class="inner">
+    <a class="title" href="/">主页</a>
+    <div class="nav-arrow"></div>
+    <div class="nav-items">
+      <a class="nav-item nav-item-home" href="/"
+        >主页</a
+      >
+       
+      <a class="nav-item" href="/archives">全部</a>
+        
+      <a class="nav-item" href="/categories">分类</a>
+        
+      <a class="nav-item" href="/friends">朋友</a>
+        
+      <a class="nav-item" href="/projects">项目</a>
+        
+      <a class="nav-item" href="/about">关于</a>
+        
+      <a
+        class="nav-item nav-item-github nav-item-icon"
+        href="https://github.com/landaye/landaye.github.io.git"
+        target="_blank"
+        aria-label="GitHub"
+        >&nbsp;</a
+      >
+        
+      <a
+        class="nav-item nav-item-codepen nav-item-icon"
+        href="https://codepen.io/landaye"
+        target="_blank"
+        aria-label="CodePen"
+        >&nbsp;</a
+      >
+        
+      <a
+        class="nav-item nav-item-search nav-item-icon"
+        href="/search"
+        aria-label="Search"
+        >&nbsp;</a
+      >
+
+       
+    </div>
+  </div>
+</nav>
+
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/项目/">项目</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>November</span>
+            <span>20,</span>
+            <span>2024</span>
+        </div>
+        
+
+        <h1 class="title">生态农业</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="文章内容"><a href="#文章内容" class="headerlink" title="文章内容"></a>文章内容</h1><hr>
+<h2 id="Echarts-伪3D多图层拖拽和缩放"><a href="#Echarts-伪3D多图层拖拽和缩放" class="headerlink" title="Echarts 伪3D多图层拖拽和缩放"></a>Echarts 伪3D多图层拖拽和缩放</h2><p>使用 vue3+Echarts 实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jsonData <span class="keyword">from</span> <span class="string">&quot;../..//geo-500237.json&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">initEchart</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    echarts.<span class="title function_">registerMap</span>(<span class="string">&quot;巫山县&quot;</span>, jsonData);</span><br><span class="line">    <span class="keyword">const</span> myChart = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;mapChart&quot;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> option = &#123;</span><br><span class="line">        <span class="attr">title</span>: &#123;</span><br><span class="line">            <span class="attr">text</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">            <span class="attr">x</span>: <span class="string">&quot;left&quot;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">geo</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">map</span>: <span class="string">&#x27;巫山县&#x27;</span>,</span><br><span class="line">                <span class="attr">zoom</span>: <span class="number">1.2</span>,</span><br><span class="line">                <span class="attr">zlevel</span>: <span class="number">5</span>,</span><br><span class="line">                <span class="attr">roam</span>: <span class="literal">true</span>, <span class="comment">// 启用缩放和平移</span></span><br><span class="line">                <span class="attr">aspectScale</span>: <span class="number">1</span>,</span><br><span class="line">                <span class="attr">selectedMode</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="attr">label</span>: &#123; <span class="attr">show</span>: <span class="literal">false</span>, <span class="attr">color</span>: <span class="string">&#x27;#eee&#x27;</span> &#125;,</span><br><span class="line">                <span class="attr">itemStyle</span>: &#123; <span class="attr">color</span>: <span class="string">&#x27;#2075B8&#x27;</span>, <span class="attr">borderWidth</span>: <span class="number">3</span>, <span class="attr">borderColor</span>: <span class="string">&#x27;#fff&#x27;</span> &#125;,</span><br><span class="line">                <span class="attr">layoutSize</span>: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">                <span class="attr">animationDurationUpdate</span>: <span class="number">0</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">map</span>: <span class="string">&#x27;巫山县&#x27;</span>,</span><br><span class="line">                <span class="attr">zoom</span>: <span class="number">1.2</span>,</span><br><span class="line">                <span class="attr">roam</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="attr">aspectScale</span>: <span class="number">1</span>,</span><br><span class="line">                <span class="attr">selectedMode</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="attr">top</span>: <span class="string">&#x27;11%&#x27;</span>,</span><br><span class="line">                <span class="attr">zlevel</span>: <span class="number">4</span>,</span><br><span class="line">                <span class="attr">itemStyle</span>: &#123; <span class="attr">color</span>: <span class="string">&#x27;#3C5FA1&#x27;</span>, <span class="attr">borderWidth</span>: <span class="number">1</span>, <span class="attr">borderColor</span>: <span class="string">&#x27;#3C5FA1&#x27;</span> &#125;,</span><br><span class="line">                <span class="attr">layoutSize</span>: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">                <span class="attr">animationDurationUpdate</span>: <span class="number">0</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">map</span>: <span class="string">&#x27;巫山县&#x27;</span>,</span><br><span class="line">                <span class="attr">zoom</span>: <span class="number">1.2</span>,</span><br><span class="line">                <span class="attr">roam</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="attr">aspectScale</span>: <span class="number">1</span>,</span><br><span class="line">                <span class="attr">selectedMode</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="attr">top</span>: <span class="string">&#x27;12%&#x27;</span>,</span><br><span class="line">                <span class="attr">zlevel</span>: <span class="number">3</span>,</span><br><span class="line">                <span class="attr">itemStyle</span>: &#123; <span class="attr">color</span>: <span class="string">&#x27;#163F6C&#x27;</span>, <span class="attr">borderWidth</span>: <span class="number">1</span>, <span class="attr">borderColor</span>: <span class="string">&#x27;#163F6C&#x27;</span> &#125;,</span><br><span class="line">                <span class="attr">layoutSize</span>: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">                <span class="attr">animationDurationUpdate</span>: <span class="number">0</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">map</span>: <span class="string">&#x27;巫山县&#x27;</span>,</span><br><span class="line">                <span class="attr">zoom</span>: <span class="number">1.2</span>,</span><br><span class="line">                <span class="attr">roam</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="attr">aspectScale</span>: <span class="number">1</span>,</span><br><span class="line">                <span class="attr">selectedMode</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="attr">top</span>: <span class="string">&#x27;13%&#x27;</span>,</span><br><span class="line">                <span class="attr">zlevel</span>: <span class="number">2</span>,</span><br><span class="line">                <span class="attr">itemStyle</span>: &#123; <span class="attr">color</span>: <span class="string">&#x27;#163F6C&#x27;</span>, <span class="attr">borderWidth</span>: <span class="number">1</span>, <span class="attr">borderColor</span>: <span class="string">&#x27;#FFF&#x27;</span> &#125;,</span><br><span class="line">                <span class="attr">layoutSize</span>: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">                <span class="attr">animationDurationUpdate</span>: <span class="number">0</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">tooltip</span>: &#123;</span><br><span class="line">            <span class="attr">trigger</span>: <span class="string">&quot;item&quot;</span>,</span><br><span class="line">            <span class="attr">backgroundColor</span>: <span class="string">&#x27;#fff&#x27;</span>,</span><br><span class="line">            <span class="attr">show</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">formatter</span>: <span class="keyword">function</span> (<span class="params">params</span>) &#123;</span><br><span class="line">                <span class="keyword">let</span> html = <span class="string">`&lt;div style=&quot;height:auto;width:134px;&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;div style=&quot;font-size:14px;font-weight:bold;color:#333;margin-bottom:16px;line-height:1;&quot;&gt;</span></span><br><span class="line"><span class="string">                <span class="subst">$&#123;params.name&#125;</span></span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">            &lt;div style=&quot;font-size:12px;color:#808080;margin-bottom:8px;display:flex;align-items:center;line-height:1;&quot;&gt;</span></span><br><span class="line"><span class="string">                &lt;span style=&quot;display:inline-block;margin-right:8px;border-radius:6px;width:6px;height:6px;background-color:<span class="subst">$&#123;params.color&#125;</span>;&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                占比：&lt;span style=&quot;flex:1;text-align:right;&quot;&gt;<span class="subst">$&#123;params.percentage&#125;</span>%&lt;/span&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">            &lt;div style=&quot;font-size:12px;color:#808080;margin-bottom:8px;display:flex;align-items:center;line-height:1;&quot;&gt;</span></span><br><span class="line"><span class="string">                &lt;span style=&quot;display:inline-block;margin-right:8px;border-radius:6px;width:6px;height:6px;background-color:<span class="subst">$&#123;params.color&#125;</span>;&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                产值（万元）：&lt;span style=&quot;flex:1;text-align:right;&quot;&gt;<span class="subst">$&#123;params.value&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">            &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;`</span>;</span><br><span class="line">                <span class="keyword">return</span> html;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">toolbox</span>: &#123;</span><br><span class="line">            <span class="attr">show</span>: <span class="literal">false</span>,</span><br><span class="line">            <span class="attr">orient</span>: <span class="string">&quot;vertical&quot;</span>,</span><br><span class="line">            <span class="attr">left</span>: <span class="string">&quot;right&quot;</span>,</span><br><span class="line">            <span class="attr">top</span>: <span class="string">&quot;center&quot;</span>,</span><br><span class="line">            <span class="attr">feature</span>: &#123;</span><br><span class="line">                <span class="attr">dataView</span>: &#123; <span class="attr">readOnly</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">                <span class="attr">restore</span>: &#123;&#125;,</span><br><span class="line">                <span class="attr">saveAsImage</span>: &#123;&#125;,</span><br><span class="line">                <span class="attr">dataZoom</span>: &#123; <span class="attr">show</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">series</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">map</span>: <span class="string">&quot;巫山县&quot;</span>,</span><br><span class="line">                <span class="attr">zoom</span>: <span class="number">1.2</span>,</span><br><span class="line">                <span class="attr">roam</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="attr">zlevel</span>: <span class="number">6</span>,</span><br><span class="line">                <span class="attr">name</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">                <span class="attr">type</span>: <span class="string">&quot;map&quot;</span>,</span><br><span class="line">                <span class="attr">mapType</span>: <span class="string">&quot;巫山县&quot;</span>,</span><br><span class="line">                <span class="attr">selectedMode</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="attr">aspectScale</span>: <span class="number">1</span>,</span><br><span class="line">                <span class="attr">animationDurationUpdate</span>: <span class="number">0</span>,</span><br><span class="line">                <span class="attr">label</span>: &#123;</span><br><span class="line">                    <span class="attr">show</span>: <span class="literal">true</span>,</span><br><span class="line">                    <span class="attr">color</span>: <span class="string">&quot;#fff&quot;</span>,</span><br><span class="line">                    <span class="attr">fontSize</span>: <span class="number">13</span>,</span><br><span class="line">                    <span class="attr">fontWeight</span>: <span class="string">&quot;bold&quot;</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">emphasis</span>: &#123;</span><br><span class="line">                    <span class="attr">label</span>: &#123;</span><br><span class="line">                        <span class="attr">show</span>: <span class="literal">true</span>,</span><br><span class="line">                        <span class="attr">color</span>: <span class="string">&quot;white&quot;</span>,</span><br><span class="line">                        <span class="attr">fontSize</span>: <span class="number">17</span>,</span><br><span class="line">                        <span class="attr">fontWeight</span>: <span class="string">&quot;bold&quot;</span>,</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">itemStyle</span>: &#123;</span><br><span class="line">                        <span class="attr">areaColor</span>: <span class="string">&quot;inherit&quot;</span>,</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">scale</span>: <span class="number">1.5</span>,</span><br><span class="line">                    <span class="attr">animationDuration</span>: <span class="number">500</span>,</span><br><span class="line">                    <span class="attr">animationEasing</span>: <span class="string">&#x27;cubicOut&#x27;</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">itemStyle</span>: &#123;</span><br><span class="line">                    <span class="attr">borderColor</span>: <span class="string">&#x27;white&#x27;</span>,</span><br><span class="line">                    <span class="comment">// normal: &#123;</span></span><br><span class="line">                    <span class="comment">//     areaColor: &quot;#3c5fa1&quot;,</span></span><br><span class="line">                    <span class="comment">//     shadowColor:&#x27;#3c5fa1&#x27;,</span></span><br><span class="line">                    <span class="comment">//     shadowOffsetX:0,</span></span><br><span class="line">                    <span class="comment">//     shadowOffsetY:25,</span></span><br><span class="line">                    <span class="comment">// &#125;</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">layoutSize</span>: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">                <span class="attr">data</span>: [</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;官阳镇&quot;</span>, <span class="attr">value</span>: <span class="number">11</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;当阳乡&quot;</span>, <span class="attr">value</span>: <span class="number">2</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;平河乡&quot;</span>, <span class="attr">value</span>: <span class="number">2</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;龙溪镇&quot;</span>, <span class="attr">value</span>: <span class="number">34</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;福田镇&quot;</span>, <span class="attr">value</span>: <span class="number">12</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;大昌镇&quot;</span>, <span class="attr">value</span>: <span class="number">3</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;双龙镇&quot;</span>, <span class="attr">value</span>: <span class="number">41</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;金坪乡&quot;</span>, <span class="attr">value</span>: <span class="number">23</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;巫峡镇&quot;</span>, <span class="attr">value</span>: <span class="number">34</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;龙门街道&quot;</span>, <span class="attr">value</span>: <span class="number">11</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;高唐街道&quot;</span>, <span class="attr">value</span>: <span class="number">22</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;两坪乡&quot;</span>, <span class="attr">value</span>: <span class="number">33</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;竹贤乡&quot;</span>, <span class="attr">value</span>: <span class="number">2</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;骡坪镇&quot;</span>, <span class="attr">value</span>: <span class="number">11</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;三溪乡&quot;</span>, <span class="attr">value</span>: <span class="number">15</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;曲尺乡&quot;</span>, <span class="attr">value</span>: <span class="number">24</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;大溪乡&quot;</span>, <span class="attr">value</span>: <span class="number">32</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;铜鼓镇&quot;</span>, <span class="attr">value</span>: <span class="number">36</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;建坪乡&quot;</span>, <span class="attr">value</span>: <span class="number">12</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;官渡镇&quot;</span>, <span class="attr">value</span>: <span class="number">23</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;抱龙镇&quot;</span>, <span class="attr">value</span>: <span class="number">34</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;培石乡&quot;</span>, <span class="attr">value</span>: <span class="number">21</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;笃坪乡&quot;</span>, <span class="attr">value</span>: <span class="number">32</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;庙宇镇&quot;</span>, <span class="attr">value</span>: <span class="number">24</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;红椿土家族乡&quot;</span>, <span class="attr">value</span>: <span class="number">17</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">name</span>: <span class="string">&quot;邓家土家族乡&quot;</span>, <span class="attr">value</span>: <span class="number">28</span> &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="attr">nameMap</span>: &#123;</span><br><span class="line">                    <span class="string">&#x27;官阳镇&#x27;</span>: <span class="string">&#x27;官阳镇&#x27;</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">visualMap</span>: &#123;</span><br><span class="line">            <span class="attr">type</span>: <span class="string">&#x27;piecewise&#x27;</span>,</span><br><span class="line">            <span class="attr">pieces</span>: [</span><br><span class="line">                &#123; <span class="attr">min</span>: <span class="number">1</span>, <span class="attr">max</span>: <span class="number">9</span>, <span class="attr">color</span>: <span class="string">&#x27;#269779&#x27;</span> &#125;,</span><br><span class="line">                &#123; <span class="attr">min</span>: <span class="number">10</span>, <span class="attr">max</span>: <span class="number">17</span>, <span class="attr">color</span>: <span class="string">&#x27;#447dac&#x27;</span> &#125;,</span><br><span class="line">                &#123; <span class="attr">min</span>: <span class="number">18</span>, <span class="attr">max</span>: <span class="number">25</span>, <span class="attr">color</span>: <span class="string">&#x27;#d3be3d&#x27;</span> &#125;,</span><br><span class="line">                &#123; <span class="attr">min</span>: <span class="number">26</span>, <span class="attr">max</span>: <span class="number">33</span>, <span class="attr">color</span>: <span class="string">&#x27;#d69129&#x27;</span> &#125;,</span><br><span class="line">                &#123; <span class="attr">min</span>: <span class="number">34</span>, <span class="attr">max</span>: <span class="number">41</span>, <span class="attr">color</span>: <span class="string">&#x27;#a14a40&#x27;</span> &#125;,</span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">text</span>: [],</span><br><span class="line">            <span class="attr">realtime</span>: <span class="literal">false</span>,</span><br><span class="line">            <span class="attr">calculable</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">show</span>: <span class="literal">false</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    myChart.<span class="title function_">setOption</span>(option);</span><br><span class="line">    myChart.<span class="title function_">on</span>(<span class="string">&quot;georoam&quot;</span>, <span class="keyword">function</span> (<span class="params">params</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> option = myChart.<span class="title function_">getOption</span>(); <span class="comment">// 获取当前的 option 对象</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (params.<span class="property">zoom</span> != <span class="literal">null</span> &amp;&amp; params.<span class="property">zoom</span> != <span class="literal">undefined</span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(params.<span class="property">zoom</span>);</span><br><span class="line">            <span class="comment">// 如果捕捉到缩放事件（即缩放操作）</span></span><br><span class="line">            <span class="keyword">let</span> mo = option.<span class="property">geo</span>[<span class="number">0</span>].<span class="property">zoom</span>;</span><br><span class="line">            <span class="comment">// 遍历所有的 geo 图层，保持缩放和中心位置同步</span></span><br><span class="line">            option.<span class="property">geo</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">geoLayer, index</span>) =&gt;</span> &#123;</span><br><span class="line">                geoLayer.<span class="property">zoom</span> = option.<span class="property">series</span>[<span class="number">0</span>].<span class="property">zoom</span>; <span class="comment">// 将缩放级别同步到所有的 geo 图层</span></span><br><span class="line">                geoLayer.<span class="property">center</span> = option.<span class="property">series</span>[<span class="number">0</span>].<span class="property">center</span>; <span class="comment">// 将中心位置同步到所有的 geo 图层</span></span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// // 根据缩放级别调整字符大小</span></span><br><span class="line">            <span class="comment">// let sizeRatio = option.series[0].zoom / mo;</span></span><br><span class="line">            <span class="comment">// if (option.series[0].zoom &gt; mo) &#123;</span></span><br><span class="line">            <span class="comment">//     option.series[0].label.fontSize = option.series[0].label.fontSize * sizeRatio;</span></span><br><span class="line">            <span class="comment">// &#125; else &#123;</span></span><br><span class="line">            <span class="comment">//     option.series[0].label.fontSize = option.series[0].label.fontSize * sizeRatio;</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果是拖动事件（即拖动地图）</span></span><br><span class="line">            option.<span class="property">geo</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">geoLayer</span>) =&gt;</span> &#123;</span><br><span class="line">                geoLayer.<span class="property">center</span> = option.<span class="property">series</span>[<span class="number">0</span>].<span class="property">center</span>; <span class="comment">// 将所有 geo 图层的中心位置同步到第一个图层的中心位置</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将更新后的 option 设置回图表</span></span><br><span class="line">        myChart.<span class="title function_">setOption</span>(option);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        myChart.<span class="title function_">resize</span>();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">onMounted</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">initEchart</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="大屏适配antofit-js"><a href="#大屏适配antofit-js" class="headerlink" title="大屏适配antofit.js"></a>大屏适配antofit.js</h2><p><a target="_blank" rel="noopener" href="https://auto-plugin.github.io/index/autofit.js/api.html">前往antofit.js</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line"><span class="keyword">import</span> index <span class="keyword">from</span> <span class="string">&#x27;@/pages/index.vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> autofit <span class="keyword">from</span> <span class="string">&#x27;autofit.js&#x27;</span></span><br><span class="line">  <span class="keyword">const</span> options = &#123;</span><br><span class="line">    <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    <span class="attr">wh</span>: <span class="number">1920</span>, <span class="comment">// Width of your design layout</span></span><br><span class="line">    <span class="attr">eh</span>: <span class="number">1080</span>, <span class="comment">// Height of your design layout</span></span><br><span class="line">    <span class="attr">scaleType</span>: <span class="string">&#x27;contain&#x27;</span>, <span class="comment">// Scaling type, &#x27;contain&#x27; scales the content proportionally</span></span><br><span class="line">    <span class="attr">offsetLeft</span>: <span class="number">0</span>, <span class="comment">// No left offset</span></span><br><span class="line">    <span class="attr">offsetTop</span>: <span class="number">0</span>, <span class="comment">// No top offset</span></span><br><span class="line">    <span class="attr">autoCenter</span>: <span class="literal">true</span>, <span class="comment">// Center the layout automatically</span></span><br><span class="line">    <span class="attr">resize</span>: <span class="literal">true</span>, <span class="comment">// Resize elements dynamically</span></span><br><span class="line">    <span class="attr">callback</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Autofit complete&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  autofit.<span class="title function_">init</span>(options);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">index</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">* &#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="attribute">padding</span>: <span class="number">0</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="attribute">margin</span>: <span class="number">0</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-tag">body</span> &#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="attribute">overflow</span>: hidden;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  <span class="attribute">background-color</span>: <span class="number">#022028</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数字累加动画-NumberFlow"><a href="#数字累加动画-NumberFlow" class="headerlink" title="数字累加动画 NumberFlow"></a>数字累加动画 NumberFlow</h2><p><a target="_blank" rel="noopener" href="https://number-flow.barvian.me/vue">前往NumberFlow</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">NumberFlow</span> <span class="keyword">from</span> <span class="string">&#x27;@number-flow/vue&#x27;</span></span><br><span class="line">&lt;div&gt;<span class="language-xml"><span class="tag">&lt;<span class="name">NumberFlow</span> <span class="attr">value</span>=<span class="string">&quot;10000&quot;</span> /&gt;</span></span>&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="tailwind"><a href="#tailwind" class="headerlink" title="tailwind"></a>tailwind</h2>
+    </div>
+
+    
+    <div class="about">
+        <h1>关于本文</h1>
+        <div class="details">
+            <p>由 兰大爷 撰写, 采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a> 许可协议.</p>
+        </div>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        <a class="next"></a>
+        
+        <a href="/2024/10/01/wsdx_fuban/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">上一篇</p>
+                    <h3 class="title">府办项目</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+                <div class="group">
+                    <h2 class="title">
+                        Blog
+                    </h2>
+                    
+                        <a href="/" class="item">
+                            主页
+                        </a>
+                        
+                        <a href="/archives" class="item">
+                            全部
+                        </a>
+                        
+                        <a href="/categories" class="item">
+                            分类
+                        </a>
+                        
+                        <a href="/friends" class="item">
+                            朋友
+                        </a>
+                        
+                        <a href="/about" class="item">
+                            关于
+                        </a>
+                        
+                </div>
+                
+                <div class="group">
+                    <h2 class="title">
+                        Projects
+                    </h2>
+                    
+                        <a target="_blank" rel="noopener" href="https://gitee.com/Lan-Daye/aj" class="item">
+                            Anju
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://gitee.com/Lan-Daye/axing.git" class="item">
+                            Axing
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://github.com/landaye/cqyt" class="item">
+                            cqyt
+                        </a>
+                        
+                </div>
+                
+                <div class="group">
+                    <h2 class="title">
+                        Me
+                    </h2>
+                    
+                        <a target="_blank" rel="noopener" href="https://github.com/landaye/landaye.github.io.git" class="item">
+                            GitHub
+                        </a>
+                        
+                        <a target="_blank" rel="noopener" href="https://codepen.io/landaye" class="item">
+                            CodePen
+                        </a>
+                        
+                        <a href="a2219816262@163.com" class="item">
+                            Email
+                        </a>
+                        
+                </div>
+                
+        </div>
+        <span>&copy; 2025
+                兰大爷<br>由 <a href="http://hexo.io/" target="_blank">Hexo</a> 驱动 </span>
+        
+                
+                    <br>
+                    <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                        <label>
+                            <input type="radio" value="light">
+                            <span>Light</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="dark">
+                            <span>Dark</span>
+                        </label>
+                        <label>
+                            <input type="radio" value="auto">
+                            <span>Auto</span>
+                        </label>
+                    </div>
+                    
+    </div>
+</footer>
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
